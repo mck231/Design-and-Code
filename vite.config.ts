@@ -8,11 +8,16 @@ import tailwindcss from "@tailwindcss/vite"; // Import Tailwind CSS Vite plugin
 export default defineConfig({
   plugins: [
     reactRouter(),
-    tailwindcss(), // Add Tailwind CSS plugin
+    tailwindcss(), 
     tsconfigPaths(),
+    netlifyPlugin(),
     svgr(),    
   ],
   server: {
     port: 3000
   }
 });
+function netlifyPlugin(): import("vite").PluginOption {
+  throw new Error("Function not implemented.");
+}
+
