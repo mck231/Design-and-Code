@@ -1,0 +1,93 @@
+[
+  {
+    "id": "dc-20250521-web-automation-ux-design-systems",
+    "slug": "web-automation-career-wins-ux-design-systems-may-2025",
+    "title": "Design & Code: Web Automation & Career Wins with Andre Brumfield + UX Design Systems with John Fleenor",
+    "date": "2025-05-21",
+    "time": {
+      "start": "6:00 PM",
+      "end": "8:00 PM",
+      "full": "6:00 PM - 8:00 PM"
+    },
+    "location": {
+      "name": "Crews Center for Entrepreneurship",
+      "address": null 
+    },
+    "summary": "Join us for insightful talks on leveraging web automation for career advancement by Andre Brumfield, and a deep dive into UX Design Systems with John Fleenor.",
+    "description": {
+      "whoIsThisFor": "This MeetUp serves as a check-in with the community of designers and developers in the City of Memphis. Whether you're a passionate beginner looking to get into tech, an experienced professional eager to share your knowledge, or someone curious to learn from others, this MeetUp is perfect for you.",
+      "agenda": [
+        {
+          "order": 1,
+          "type": "networking",
+          "activity": "Mix and Mingle",
+          "durationMinutes": 15,
+          "details": "Grab a plate, say hello, and get to know others in the room."
+        },
+        {
+          "order": 2,
+          "type": "talk",
+          "speakerKey": "andreBrumfield",
+          "activity": "Keynote Speaker #1: Andre Brumfield",
+          "durationMinutes": 30,
+          "details": "\"Taking Initiative: Web Automation & Networking Through Projects\"\nAndre shares his inspiring story of how personal projects helped him break into IT. He'll walk us through how he used Selenium Framework and PowerShell to automate tasks, make new connections, and open doors in his career."
+        },
+        {
+          "order": 3,
+          "type": "talk",
+          "speakerKey": "johnFleenor",
+          "activity": "Keynote Speaker #2: John Fleenor",
+          "durationMinutes": 30,
+          "details": "\"Design Systems in UX: Structure, Benefits, and Real-World Impact\"\nWhat happens when teams don’t have a design system? John will break it down with real examples, including the design system he helped create for the U.S. Navy. Learn how UX design systems promote consistency, reduce errors, and improve collaboration across teams."
+        },
+        {
+          "order": 4,
+          "type": "openMic",
+          "activity": "Open Mic",
+          "durationMinutes": 15,
+          "details": "A safe and casual space to share something you’ve learned, built, or want feedback on. No pressure, just good energy."
+        }
+      ],
+      "speakers": [
+        {
+          "key": "andreBrumfield",
+          "name": "Andre Brumfield",
+          "talkTitle": "Taking Initiative: Web Automation & Networking Through Projects"
+        },
+        {
+          "key": "johnFleenor",
+          "name": "John Fleenor",
+          "talkTitle": "Design Systems in UX: Structure, Benefits, and Real-World Impact"
+        }
+      ],
+      "rsvp": {
+        "platform": "Meetup",
+        "details": "Please confirm your attendance via the Meetup app so we can plan accordingly.",
+        "link": "https://www.meetup.com/memphis-technology-user-groups/events/307655480/?eventOrigin=your_events"
+      },
+      "sponsors": [
+        {
+          "name": "Epicenter",
+          "contribution": "providing food"
+        },
+        {
+          "name": "Crews Center for Entrepreneurship",
+          "contribution": "hosting us"
+        }
+      ],
+      "parkingInfo": "Plenty of street parking is available near the venue."
+    },
+    "topics": [
+      "Events in Memphis, TN",
+      "Web Design",
+      "JavaScript",
+      "ReactJS",
+      "Software Development",
+      "Web Development",
+      "Web Automation",
+      "Career Development",
+      "UX Design",
+      "Design Systems"
+    ]
+  }
+]
