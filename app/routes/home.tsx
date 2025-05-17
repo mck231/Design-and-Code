@@ -1,10 +1,12 @@
 // app/routes/home.tsx
 import { Link, useLoaderData, type MetaFunction, type LoaderFunctionArgs } from "react-router-dom";
+import { useRef, useEffect, useState } from "react";
 
 // Assuming Event interface is exported from events.tsx or a shared types file
 // If not, you'll need to define it here as well.
 import type { Event } from "./events"; // Or adjust path to where Event interface is defined
 import eventsDataMay2025 from "../events/may-2025.json"; // Relative path from app/routes/ to app/events/
+import { BrainCircuit, Lightbulb, Network, Users } from "lucide-react";
 // Import other month data files here if you have them and combine them
 // import eventsDataJune2025 from "../events/june-2025.json";
 
@@ -46,75 +48,138 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-// Helper Icon Components (using Heroicons SVG paths)
-const CodeBracketIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" {...props}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
-  </svg>
-);
-
-const PaintBrushIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" {...props}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a15.995 15.995 0 00-4.764 4.648l-3.876 5.814a1.151 1.151 0 001.597 1.597l5.814-3.875a15.995 15.995 0 004.648-4.763m-4.648 4.763l-.009-.009c-.007-.007-.014-.014-.022-.022L12 16.01l-3.388 1.873.009.009a15.995 15.995 0 01-2.245 2.403l-3.036 2.024a1.149 1.149 0 01-1.597-1.597l2.024-3.035a15.995 15.995 0 012.403-2.245L12 16.01z" />
-  </svg>
-);
-
-const UsersIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" {...props}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-3.741-5.582M12 15.75a3 3 0 01-3-3A3 3 0 0112 9.75v1.5a1.5 1.5 0 01-3 0m-2.906 6.086a9.093 9.093 0 01-3.741-.479 3 3 0 013.741-5.582m0 0V9.75m3.75 0a3 3 0 00-3-3A3 3 0 0012 9.75v1.5a1.5 1.5 0 003 0m0 0h1.5m-1.5 0a3 3 0 01-3 3m0 0a3 3 0 01-3-3m0 0a3 3 0 01-3-3m0 0a3 3 0 013-3m0 0a3 3 0 013-3m0 0a3 3 0 013-3" />
-  </svg>
-);
-
-const LightBulbIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" {...props}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.355a7.5 7.5 0 01-7.5 0" />
-    <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 21a2.25 2.25 0 004.5 0M12 18.75a.75.75 0 01.75.75v.008c0 .414-.336.75-.75.75h-.008a.75.75 0 01-.75-.75v-.008a.75.75 0 01.75-.75z" />
-    <path strokeLinecap="round" strokeLinejoin="round" d="M12 3c-.828 0-1.5.672-1.5 1.5v1.5a.75.75 0 001.5 0v-1.5A1.5 1.5 0 0012 3zM12 9a3 3 0 100-6 3 3 0 000 6z" />
-  </svg>
-);
 
 const features = [
-  { name: 'Learn & Grow', description: 'Expand your knowledge in UI/UX, coding, and emerging tech through insightful talks and workshops.', icon: LightBulbIcon },
-  { name: 'Network & Connect', description: 'Meet fellow designers, developers, founders, and tech enthusiasts in the Memphis area.', icon: UsersIcon },
-  { name: 'Share & Collaborate', description: 'Present your projects, share your expertise, and find collaborators for new ventures.', icon: CodeBracketIcon },
-  { name: 'Get Inspired', description: 'Hear from industry professionals, discover new ideas, and fuel your passion for technology.', icon: PaintBrushIcon },
+  { name: 'Learn & Grow', description: 'Expand your knowledge in UI/UX, coding, and emerging tech through insightful talks and workshops.', icon: BrainCircuit },
+  { name: 'Network & Connect', description: 'Meet fellow designers, developers, founders, and tech enthusiasts in the Memphis area.', icon: Network },
+  { name: 'Share & Collaborate', description: 'Present your projects, share your expertise, and find collaborators for new ventures.', icon: Users },
+  { name: 'Get Inspired', description: 'Hear from industry professionals, discover new ideas, and fuel your passion for technology.', icon: Lightbulb },
 ];
 
 
 export default function HomePage() {
   const { nextEvent } = useLoaderData() as { nextEvent: Event | null };
 
+  const heroSectionRef = useRef<HTMLDivElement>(null);
+  const heroBgRef = useRef<HTMLImageElement>(null);
+  const bannerTextRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!heroBgRef.current || !bannerTextRef.current || !heroSectionRef.current) {
+        return;
+      }
+
+      const scrollY = window.scrollY;
+      const vh = window.innerHeight;
+
+      // --- Animation Keyframes (as fractions of viewport height) ---
+      // Banner Text Fade Out
+      const bannerFadeStartScroll = 0;
+      const bannerFadeEndScroll = vh * 0.4; // Banner fully faded by 40% of vh scroll
+
+      // Hero Image Fade In
+      const imageFadeInStartScroll = vh * 0.1; // Image starts fading in at 10% vh scroll
+      const imageFadeInEndScroll = vh * 0.6;   // Image fully visible by 60% vh scroll
+
+      // Hero Image Fade Out (as the entire hero section scrolls up)
+      // This needs to be relative to the hero section's position or a larger scroll range
+      const imageVisibleDuration = vh * 0.5; // How long the image stays fully opaque
+      const imageFadeOutStartScroll = imageFadeInEndScroll + imageVisibleDuration; // Start fading out after it has been visible
+      const imageFadeOutEndScroll = imageFadeOutStartScroll + vh * 0.5; // Fully faded out over another 50% vh scroll
+
+      // --- Opacity Calculations ---
+
+      // Banner Text Opacity
+      let bannerOpacity = 1;
+      if (scrollY >= bannerFadeStartScroll && scrollY <= bannerFadeEndScroll) {
+        bannerOpacity = 1 - (scrollY - bannerFadeStartScroll) / (bannerFadeEndScroll - bannerFadeStartScroll);
+      } else if (scrollY > bannerFadeEndScroll) {
+        bannerOpacity = 0;
+      }
+      bannerTextRef.current.style.opacity = `${Math.max(0, Math.min(1, bannerOpacity))}`;
+      // Optionally hide banner with display:none when fully transparent to prevent interaction
+      bannerTextRef.current.style.display = bannerOpacity <= 0 ? 'none' : 'flex';
+
+
+      // Hero Background Image Opacity
+      let imageOpacity = 0;
+      if (scrollY < imageFadeInStartScroll) {
+        imageOpacity = 0;
+      } else if (scrollY >= imageFadeInStartScroll && scrollY < imageFadeInEndScroll) {
+        imageOpacity = (scrollY - imageFadeInStartScroll) / (imageFadeInEndScroll - imageFadeInStartScroll);
+      } else if (scrollY >= imageFadeInEndScroll && scrollY < imageFadeOutStartScroll) {
+        imageOpacity = 1; // Fully visible
+      } else if (scrollY >= imageFadeOutStartScroll && scrollY < imageFadeOutEndScroll) {
+        imageOpacity = 1 - (scrollY - imageFadeOutStartScroll) / (imageFadeOutEndScroll - imageFadeOutStartScroll);
+      } else if (scrollY >= imageFadeOutEndScroll) {
+        imageOpacity = 0;
+      }
+      heroBgRef.current.style.opacity = `${Math.max(0, Math.min(1, imageOpacity))}`;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Call on mount to set initial opacities
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div className="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100">
-      {/* 1. Hero Section */}
-      <div className="relative isolate overflow-hidden pt-14 min-h-[70vh] md:min-h-[80vh] flex items-center">
-        {/* Placeholder for a background image - replace with your actual image */}
+      {/* 1. Hero Section - Increased height to allow for scroll animations */}
+      <div ref={heroSectionRef} className="relative isolate overflow-hidden pt-14 min-h-[180vh] md:min-h-[200vh]">
+        {/* Background Image - Starts transparent, positioned to fill */}
         <img
-          src="/memtech.png" // Corrected src path to be absolute from public folder
+          ref={heroBgRef}
+          id="hero-bg"
+          src="/memtech.png"
           alt="Memphis Tech Community"
-          className="absolute inset-0 -z-10 h-full w-full object-cover opacity-30 dark:opacity-60"
+          className="absolute inset-0 -z-10 h-full w-full object-contain opacity-0 transition-opacity duration-300 ease-in-out" // Changed object-cover to object-contain
         />
-        {/* Gradient overlay for better text readability */}
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-gray-900/30 via-gray-900/10 to-transparent dark:from-gray-900/50 dark:via-gray-900/30"></div>
+        {/* Gradient overlay for image - ensure it's behind text but can overlay image if needed */}
+        <div className="absolute inset-0 -z-5 bg-gradient-to-b from-gray-900/10 via-transparent to-transparent dark:from-gray-900/30 dark:via-transparent"></div>
 
-        <div className="mx-auto max-w-4xl py-20 sm:py-32 lg:py-40 px-6 lg:px-8 text-center bg-gray-800/40 backdrop-blur-lg rounded-2xl shadow-xl border border-gray-400/20 lg:mb-[600px]">
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl drop-shadow-md">
-            Memphis: Where Design Meets Code.
-          </h1>
-          <p className="mt-6 text-lg leading-8 text-gray-200 sm:text-xl drop-shadow-sm">
-            Your hub for UI/UX design, software development, and tech innovation in the heart of Memphis. Join a thriving community of creators and builders.
-          </p>
-          <div className="mt-10 flex items-center justify-center gap-x-6">
-            <Link
-              to="/events"
-              className="rounded-md bg-blue-600 px-5 py-3 text-base font-semibold text-white shadow-lg hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors duration-150"
-            >
-              View Upcoming Events
-            </Link>
-            <Link to="/about" className="text-base font-semibold leading-6 text-white hover:text-gray-300 transition-colors duration-150">
-              Learn more <span aria-hidden="true">→</span>
-            </Link>
-          </div>
+        {/* Banner Text Container - Fixed positioned to center in viewport initially */}
+        <div
+          ref={bannerTextRef}
+          id="banner-text"
+          className="fixed inset-0 flex items-center justify-center p-4 z-20 transition-opacity duration-300 ease-in-out" // Changed to fixed
+        >
+          {/* Inner div for styling the text box content */}
+              <div className="mx-auto max-w-4xl py-10 sm:py-16 lg:py-20 px-6 lg:px-8 bg-gray-800/50 backdrop-blur-md rounded-2xl shadow-xl border border-gray-400/20">
+              {/* Wrapper for text alignment and structure of the top part (image, H1, paragraph) */}
+              <div className="text-center sm:text-left">
+                {/* Flex container for Image and H1 */}              
+                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-8 justify-center sm:justify-start mb-6">
+                <img
+                  src="/Design_&_Code_Logo_Email.svg"
+                  alt="Design & Code Memphis Logo"
+                  className="mt-5 h-20 w-auto sm:h-24 flex-shrink-0" // flex-shrink-0 prevents image from shrinking in flex row
+                />
+                <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl drop-shadow-md">
+                  Memphis: Where Design Meets Code.
+                </h1>
+                </div>
+
+                {/* Paragraph below the Image/H1 row. Inherits text-alignment from parent. */}
+                <p className="text-lg leading-8 text-gray-200 sm:text-xl drop-shadow-sm">
+                Your hub for UI/UX design, software development, and tech innovation in the heart of Memphis. Join a thriving community of creators and builders.
+                </p>
+              </div>
+
+              {/* Buttons container - remains unchanged */}
+              <div className="mt-10 flex items-center justify-center gap-x-6">
+                <Link
+                to="/events"
+                className="rounded-md bg-blue-600 px-5 py-3 text-base font-semibold text-white shadow-lg hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors duration-150"
+                >
+                View Upcoming Events
+                </Link>
+                <Link to="/about" className="text-base font-semibold leading-6 text-white hover:text-gray-300 transition-colors duration-150">
+                Learn more <span aria-hidden="true">→</span>
+                </Link>
+              </div>
+              </div>
         </div>
       </div>
 

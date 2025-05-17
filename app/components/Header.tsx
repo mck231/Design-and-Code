@@ -68,7 +68,7 @@ export default function Header() {
                 Events
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link
                 to="/blog"
                 className={linkClassName}
@@ -76,7 +76,7 @@ export default function Header() {
               >
                 Blog/Resources
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link
                 to="/about"
