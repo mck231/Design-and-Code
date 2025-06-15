@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react"; // Import useState for mobile menu toggle
 import Logo from "../assets/Logo.svg?react"; // Corrected SVG import for Vite + svgr
+import DuckNavButton from "./Duck";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -86,6 +87,13 @@ export default function Header() {
                 About Us
               </Link>
             </li>
+            {/* <li>
+              <DuckNavButton
+                sizeClass="w-16 h-16"                // override default size
+                className="text-blue-500 hover:text-blue-700"
+                onClick={() => console.log('quack!')}
+               />
+            </li> */}
           </ul>
         </div>
       </nav>

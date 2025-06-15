@@ -1,0 +1,85 @@
+[
+  {
+    "id": "dc-20250618-shared-workflows",
+    "slug": "control-freaks-dont-scale-shared-workflows-june-2025",
+    "title": "Design & Code: Lawrence Lockhart on Scaling UI with Shared Workflows",
+    "date": "2025-06-18",
+    "time": {
+      "start": "6:00 PM",
+      "end": "8:00 PM",
+      "full": "6:00 PM - 8:00 PM"
+    },
+    "location": {
+      "name": "Crews Center for Entrepreneurship",
+      "address": null
+    },
+    "summary": "Join us for a talk by Lawrence Lockhart on scaling UI creation and empowering teams. Learn how to move from a process gatekeeper to a systems enabler and help build faster, more innovative products.",
+    "description": {
+      "whoIsThisFor": "This MeetUp serves as a check-in with the community of designers and developers in the City of Memphis. Whether you're a passionate beginner looking to get into tech, an experienced professional eager to share your knowledge, or someone curious to learn from others, this MeetUp is perfect for you.",
+      "agenda": [
+        {
+          "order": 1,
+          "type": "networking",
+          "activity": "Mix, Mingle, and Munch",
+          "durationMinutes": 15,
+          "details": "Grab a plate, say hello, and get to know others in the room."
+        },
+        {
+          "order": 2,
+          "type": "talk",
+          "speakerKey": "lawrenceLockhart",
+          "activity": "Keynote Speaker: Lawrence Lockhart",
+          "durationMinutes": 60,
+          "details": "Topic: Control Freaks Don't Scale: How to Score Wins in UI Creation with Shared Workflows\n\nDoes meticulous control over UI/UX actually slow your team down? This talk dives into the “control freak” anti-pattern, revealing how it stifles creativity and scalability. Learn to transition from a gatekeeper to an enabler by architecting for delegated UI creation. We’ll cover strategies for creating effective guardrails and empowering your team with modern tools like visual builders and specialized SDKs, so you can build faster, happier, and more innovative teams."
+        },
+        {
+          "order": 3,
+          "type": "networking",
+          "activity": "Community Social Hour & Networking",
+          "durationMinutes": 30,
+          "details": "Following the talk, we’ll open the floor for networking and conversation. This is a great chance to discuss the topic, connect with other tech professionals, ask questions, or just hang out."
+        },
+        {
+          "order": 4,
+          "type": "openMic",
+          "activity": "Open Mic",
+          "durationMinutes": 15,
+          "details": "A safe space for attendees to share insights, ask questions, or briefly present what they’ve recently learned or built."
+        }
+      ],
+      "speakers": [
+        {
+          "key": "lawrenceLockhart",
+          "name": "Lawrence Lockhart",
+          "talkTitle": "Control Freaks Don't Scale: How to Score Wins in UI Creation with Shared Workflows",
+          "bio": "Lawrence Lockhart is a Software Developer who loves sharing solutions to modern web app development. With over 20 years of professional experience in Supply Chain, Hospitality Management, and tech, Lawrence advocates a customer-first approach to solving business problems. A lifelong learner himself, Lawrence takes great pride investing personal time helping future techies in their career paths in his role as Senior Advisor to the Code Connector non-profit tech meetup. When he's not wearing his tech hat, Lawrence enjoys cooking, gardening, and spending time with family."
+        }
+      ],
+      "rsvp": {
+        "platform": "Meetup",
+        "details": "Please confirm your attendance via the Meetup app so we can plan accordingly.",
+        "link": "https://www.meetup.com/memphis-technology-user-groups/events/307629524/?eventOrigin=home_next_event_you_are_attending"
+      },
+      "sponsors": [
+        {
+          "name": "Epicenter",
+          "contribution": "providing food"
+        },
+        {
+          "name": "Crews Center for Entrepreneurship",
+          "contribution": "hosting us"
+        }
+      ],
+      "parkingInfo": "Simply park outside. There should be ample street parking close by."
+    },
+    "topics": [
+      "UI/UX",
+      "Team Workflow",
+      "Scalability",
+      "Web Development",
+      "Software Development",
+      "Developer Tools",
+      "Events in Memphis, TN"
+    ]
+  }
+]

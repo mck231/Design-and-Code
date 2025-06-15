@@ -1,9 +1,5 @@
 // app/routes/events.tsx
-import { Link } from "react-router-dom"; // For "Read More" links
-
-// Import the event data directly from the JSON file
-// Vite will handle the import and make the data available.
-import eventsDataMay2025 from "~/../app/events/may-2025.json"; // Adjusted path to be relative to project root or app
+import { Link } from "react-router-dom";
 
 // Define TypeScript interfaces for our event data structure
 // This should match the structure of your may-2025.json
@@ -66,8 +62,16 @@ export interface Event { // Exporting Event interface for potential use elsewher
   topics: string[];
 }
 
-// Assuming your JSON file directly contains an array of Event objects
-const allEvents: Event[] = [...eventsDataMay2025]; // Combine future month data here if needed
+// Dynamically import all JSON files from the events directory
+const eventModules = import.meta.glob('../events/*.json', { eager: true });
+let allEvents: Event[] = [];
+
+for (const path in eventModules) {
+  const module = eventModules[path] as { default: Event[] }; // Type assertion for the module
+  if (module.default) {
+    allEvents = allEvents.concat(module.default);
+  }
+}
 
 // Helper function to format date (optional, but nice for display)
 function formatDate(dateString: string): string {
@@ -193,7 +197,7 @@ function EventCard({ event, isPastEvent = false }: EventCardProps) {
                 {/* Placeholder for "Read More" - this could link to a dynamic route like /events/[event.slug] */}
                 <Link
                     to={`/events/${event.slug}`} // Assuming you'll set up routes for individual event details
-                    className="inline-block text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 font-semibold hover:underline transition duration-150 ease-in-out"
+                    className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:shadow-lg transition-transform transform hover:scale-105 duration-300 ease-in-out"
                 >
                     Read More & See Full Agenda &rarr;
                 </Link>

@@ -2,11 +2,6 @@
 import { useParams, Link } from "react-router-dom";
 import { type MetaFunction, type LoaderFunction, useLoaderData, redirect } from "react-router-dom"; // Using react-router-dom's types
 
-// Import the event data directly from the JSON file(s)
-import eventsDataMay2025 from "~/../app/events/may-2025.json";
-// Import other month data files here if you have them
-// import eventsDataJune2025 from "~/../app/events/june-2025.json";
-
 // Re-using the Event interface from your events listing page or define it here
 // Ensure this matches your JSON structure
 interface EventTime {
@@ -64,11 +59,16 @@ export interface Event {
   topics: string[];
 }
 
-// Combine all event data sources
-const allEvents: Event[] = [
-    ...eventsDataMay2025,
-    // ...eventsDataJune2025, // Add other months here
-];
+// Dynamically import all JSON files from the events directory
+const eventModules = import.meta.glob('../events/*.json', { eager: true });
+let allEvents: Event[] = [];
+
+for (const path in eventModules) {
+  const module = eventModules[path] as { default: Event[] }; // Type assertion for the module
+  if (module.default) {
+    allEvents = allEvents.concat(module.default);
+  }
+}
 
 // Helper function to format date (same as in EventsPage)
 function formatDate(dateString: string): string {
