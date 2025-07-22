@@ -14,7 +14,8 @@ export default function Footer() {
           title="Design & Code Memphis Logo" // Title for accessibility
           width={50} // Width of the SVG
             height={50} // Height of the SVG
-            className="h-12 mr-3 bg-cyan-600" // Styles for size, margin, and background. Background applies if SVG is transparent.
+            className="h-12 mr-3" // Styles for size and margin - transparent background, black SVG
+            style={{ filter: 'brightness(0) saturate(100%)' }} // CSS filter to make SVG black
             aria-label="Design & Code Memphis Logo" // For accessibility
           />
           {/* Optional: If you want to add the text next to the logo if it's not clear in the SVG */}

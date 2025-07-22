@@ -21,10 +21,14 @@ export default function Header() {
       <nav className="container mx-auto px-4 py-3 flex flex-wrap items-center justify-between">
         <Link to="/" className="flex items-center">
           <Logo // Use the imported SVG component
-          title="Design & Code Memphis Logo" // Title for accessibility
-          width={50} // Width of the SVG
+            title="Design & Code Memphis Logo" // Title for accessibility
+            width={50} // Width of the SVG
             height={50} // Height of the SVG
-            className="h-12 mr-3 bg-black" // Styles for size, margin, and background. Background applies if SVG is transparent.
+            className="h-12 mr-3" // Removed text-white and fill-current
+            style={{ 
+              backgroundColor: 'transparent',
+              filter: 'brightness(0) saturate(100%) invert(1)' // This will make the SVG white
+            }}
             aria-label="Design & Code Memphis Logo" // For accessibility
           />
           {/* Optional: If you want to add the text next to the logo if it's not clear in the SVG */}
@@ -49,7 +53,7 @@ export default function Header() {
         {/* Navigation Links */}
         {/* Apply 'hidden' class based on isMobileMenuOpen state for small screens, always flex for md and up */}
         <div className={`${isMobileMenuOpen ? 'block' : 'hidden'} md:flex md:items-center md:w-auto w-full`} id="navbarNav">
-          <ul className="flex flex-col md:flex-row md:space-x-2 lg:space-x-4 mt-4 md:mt-0 text-sm"> {/* Reduced space-x for smaller screens if needed */}
+          <ul className="flex flex-col md:flex-row md:space-x-2 lg:space-x-4 mt-4 md:mt-0 text-sm items-center"> {/* Added items-center for vertical alignment */}
             <li>
               <Link
                 to="/"
@@ -87,13 +91,14 @@ export default function Header() {
                 About Us
               </Link>
             </li>
-            {/* <li>
-              <DuckNavButton
-                sizeClass="w-16 h-16"                // override default size
-                className="text-blue-500 hover:text-blue-700"
-                onClick={() => console.log('quack!')}
-               />
-            </li> */}
+            <li>
+              <Link to="/duck-hall-of-fame">
+                <DuckNavButton
+                  sizeClass="w-16 h-16" // override default size
+                  className="text-blue-500 hover:text-blue-700 cursor-pointer" // Added cursor-pointer for pointer on hover
+                />
+              </Link>
+            </li>
           </ul>
         </div>
       </nav>
