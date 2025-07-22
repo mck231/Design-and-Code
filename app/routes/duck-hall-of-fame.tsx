@@ -16,28 +16,28 @@ const speakers = [
     name: "Tasneem Wakil", 
     talkTitle: "Learning to Make Mistakes",
     event: "April 2025",
-    photo: "/app/speaker-pictures/Tasneem.jpeg"
+    photo: "/speaker-pictures/Tasneem.jpeg"
   },
   { 
     id: 2, 
     name: "Andre Brumfield", 
     talkTitle: "Taking Initiative: Web Automation & Networking Through Projects",
     event: "May 2025",
-    photo: "/app/speaker-pictures/Andrew.jpeg"
+    photo: "/speaker-pictures/Andrew.jpeg"
   },
   { 
     id: 3, 
     name: "John Fleenor", 
     talkTitle: "Design Systems in UX: Structure, Benefits, and Real-World Impact",
     event: "May 2025",
-    photo: "/app/speaker-pictures/JohnF.jpeg"
+    photo: "/speaker-pictures/JohnF.jpeg"
   },
   { 
     id: 4, 
     name: "Lawrence Lockhart", 
     talkTitle: "Control Freaks Don't Scale: How to Score Wins in UI Creation with Shared Workflows",
     event: "June 2025",
-    photo: "/app/speaker-pictures/Lawrence.jpeg"
+    photo: "/speaker-pictures/Lawrence.jpeg"
   },
 ];
 
