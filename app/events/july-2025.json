@@ -1,0 +1,112 @@
+[
+  {
+    "id": "dc-20250723-modern-web-career-pivot",
+    "slug": "modern-web-tools-career-pivot-july-2025",
+    "title": "Design & Code: Creating and Navigating in Tech — James Q. Quick on Modern Web Tools, Steph Lambruschini on Career Transitions",
+    "date": "2025-07-23",
+    "time": {
+      "start": "5:30 PM",
+      "end": "8:00 PM",
+      "full": "5:30 PM - 8:00 PM"
+    },
+    "location": {
+      "name": "Crews Center for Entrepreneurship",
+      "address": null
+    },
+    "summary": "Join us for a double keynote: James Q. Quick shares how to build a visually editable blog with Contentful, Next.js, and Makeswift, and Steph Lambruschini reveals her journey from biotech to UX design. Plus, networking, Q&A, and after-event vibes at RP Tracks!",
+    "description": {
+      "whoIsThisFor": "This MeetUp serves as a check-in with the community of designers and developers in the City of Memphis. Whether you're a passionate beginner looking to get into tech, an experienced professional eager to share your knowledge, or someone curious to learn from others, this MeetUp is perfect for you.",
+      "agenda": [
+        {
+          "order": 1,
+          "type": "networking",
+          "activity": "Mix, Mingle, and Munch",
+          "durationMinutes": 15,
+          "details": "Grab a plate, say hello, and get to know others in the room."
+        },
+        {
+          "order": 2,
+          "type": "talk",
+          "speakerKey": "jamesQQuick",
+          "activity": "Keynote Speaker #1: James Q. Quick",
+          "durationMinutes": 50,
+          "details": "Talk Title: Creating a Visually Editable Blog with Contentful, Next.js, and Makeswift\nIn this talk, James will share how to build a modern, visually editable blog using Contentful, Next.js, and Makeswift. He’ll walk through how these tools work together to create a seamless experience for content editors while maintaining full flexibility and performance for developers. Attendees will gain insight into bridging technical structure with visual design, along with real-world strategies for building scalable, user-friendly content workflows."
+        },
+        {
+          "order": 3,
+          "type": "qa",
+          "activity": "Q&A with James Q. Quick",
+          "durationMinutes": 5,
+          "details": "Ask questions and dive deeper into James's talk."
+        },
+        {
+          "order": 4,
+          "type": "talk",
+          "speakerKey": "stephLambruschini",
+          "activity": "Keynote Speaker #2: Steph Lambruschini",
+          "durationMinutes": 60,
+          "details": "Talk Title: From Pipettes to Prototypes: Navigating a Career Pivot into UX Design\nThis talk explores Steph’s unconventional path from biotech scientist to Senior UX/UI Designer at AutoZone. She highlights the mindset shifts, transferable skills, and intentional strategies that helped her thrive in the tech world. Attendees will learn the habits and principles that helped her build trust in cross-functional teams, gain confidence in a new industry, and stay grounded and motivated throughout her transition. Whether you're considering a pivot or looking to grow your impact, this session offers practical tips and real-world insights for designing a purposeful career."
+        },
+        {
+          "order": 5,
+          "type": "qa",
+          "activity": "Q&A with Steph Lambruschini",
+          "durationMinutes": 15,
+          "details": "Ask questions and dive deeper into Steph's talk."
+        },
+        {
+          "order": 6,
+          "type": "wrapUp",
+          "activity": "Community Wrap-Up & Closing",
+          "durationMinutes": 10,
+          "details": "We'll wind down with conversation, connection, and appreciation—thanking our speakers and attendees, giving shoutouts for upcoming events, snapping a group photo, and sharing a feedback QR to close out the night."
+        },
+        {
+          "order": 7,
+          "type": "afterEvent",
+          "activity": "After-Event Vibes @ RP Tracks",
+          "durationMinutes": 60,
+          "details": "Keep the conversations going! After the meetup, we’ll head over to RP Tracks for anyone who wants to hang out, grab a drink or bite, and vibe in a more casual setting. Whether you want to talk shop, share ideas, or just chill—everyone’s welcome."
+        }
+      ],
+      "speakers": [
+        {
+          "key": "jamesQQuick",
+          "name": "James Q. Quick",
+          "talkTitle": "Creating a Visually Editable Blog with Contentful, Next.js, and Makeswift"
+        },
+        {
+          "key": "stephLambruschini",
+          "name": "Steph Lambruschini",
+          "talkTitle": "From Pipettes to Prototypes: Navigating a Career Pivot into UX Design"
+        }
+      ],
+      "rsvp": {
+        "platform": "Meetup",
+        "details": "Please confirm your attendance via the Meetup app so we can plan accordingly.",
+        "link": null
+      },
+      "sponsors": [
+        {
+          "name": "Epicenter",
+          "contribution": "providing food"
+        },
+        {
+          "name": "Crews Center for Entrepreneurship",
+          "contribution": "hosting us"
+        }
+      ],
+      "parkingInfo": "Simply park outside. There should be ample street parking close by."
+    },
+    "topics": [
+      "Events in Memphis, TN",
+      "Web Design",
+      "JavaScript",
+      "ReactJS",
+      "Software Development",
+      "Web Development",
+      "Career Development",
+      "UX Design"
+    ]
+  }
+]
