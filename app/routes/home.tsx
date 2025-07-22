@@ -5,16 +5,7 @@ import { useRef, useEffect, useState } from "react";
 // Assuming Event interface is exported from events.tsx or a shared types file
 // If not, you'll need to define it here as well.
 import type { Event } from "./events"; // Or adjust path to where Event interface is defined
-import eventsDataMay2025 from "../events/may-2025.json"; // Relative path from app/routes/ to app/events/
 import { BrainCircuit, Lightbulb, Network, Users } from "lucide-react";
-// Import other month data files here if you have them and combine them
-// import eventsDataJune2025 from "../events/june-2025.json";
-
-// Combine all event data sources
-const allEvents: Event[] = [
-    ...(eventsDataMay2025 as Event[]), // Cast to Event[]
-    // ...eventsDataJune2025, // Add other months here
-];
 
 // Helper function to format date (can be moved to a utils file)
 function formatDate(dateString: string): string {
@@ -25,11 +16,25 @@ function formatDate(dateString: string): string {
   return new Date(dateString + 'T00:00:00').toLocaleDateString(undefined, options);
 }
 
-// Loader to find the next upcoming event
+// Loader to dynamically load all events and find the next upcoming event
 export async function loader({}: LoaderFunctionArgs) { // Using LoaderFunctionArgs
+  // Dynamically import all event files
+  const eventModules = import.meta.glob('../events/*.json', { eager: true });
+  
+  // Extract all events from the modules
+  const allEvents: Event[] = [];
+  for (const module of Object.values(eventModules)) {
+    const events = (module as { default: Event[] }).default;
+    if (Array.isArray(events)) {
+      allEvents.push(...events);
+    }
+  }
+
+  // Filter for upcoming events and sort chronologically
   const upcomingEvents = allEvents
     .filter(event => new Date(event.date + 'T00:00:00') >= new Date()) // Ensure comparison is fair
     .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+    
   return {
     nextEvent: upcomingEvents.length > 0 ? upcomingEvents[0] : null,
   };
