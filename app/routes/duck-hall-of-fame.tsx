@@ -39,6 +39,20 @@ const speakers = [
     event: "June 2025",
     photo: "/speaker-pictures/Lawrence.jpeg"
   },
+  { 
+    id: 5, 
+    name: "James Q. Quick", 
+    talkTitle: "Creating a Visually Editable Blog with Contentful, Next.js, and Makeswift",
+    event: "July 2025",
+    photo: "/speaker-pictures/JamesQ.jpeg"
+  },
+  { 
+    id: 6, 
+    name: "Steph Lambruschini", 
+    talkTitle: "From Pipettes to Prototypes: Navigating a Career Pivot into UX Design",
+    event: "July 2025",
+    photo: "/speaker-pictures/StephL.jpeg"
+  },
 ];
 
 export default function DuckHallOfFamePage() {
