@@ -1,0 +1,76 @@
+[
+  {
+    "id": "dc-20250820-web-accessibility-crash-course",
+    "slug": "web-accessibility-crash-course-august-2025",
+    "title": "Design & Code: Crash Course - Web Accessibility w/ Tremaine McKinley",
+    "date": "2025-08-20",
+    "time": {
+      "start": "6:00 PM",
+      "end": "8:00 PM",
+      "full": "6:00 PM - 8:00 PM"
+    },
+    "location": {
+      "name": "Crews Center for Entrepreneurship, 2nd Floor - University of Memphis",
+      "address": null
+    },
+    "summary": "Join Tremaine McKinley for a crash course on web accessibility. Learn why accessibility is becoming a non-negotiable skill for modern developers and designers, explore tools and best practices, and get hands-on with live demos to start building a more inclusive web.",
+    "description": {
+      "whoIsThisFor": "This MeetUp serves as a check-in with the community of designers and developers in the City of Memphis. Whether you're a passionate beginner looking to get into tech, an experienced professional eager to share your knowledge, or someone curious to learn from others, this MeetUp is perfect for you.",
+      "agenda": [
+        {
+          "order": 1,
+          "type": "networking",
+          "activity": "Mix, Mingle, and Munch",
+          "durationMinutes": 25,
+          "details": "Grab some food, say hello, and get to know others in the room."
+        },
+        {
+          "order": 2,
+          "type": "talk",
+          "speakerKey": "tremaineMcKinley",
+          "activity": "Keynote Speaker: Tremaine McKinley",
+          "durationMinutes": 60,
+          "details": "Crash Course: Web Accessibility\n\nWeb accessibility isn't just for specialists and advocates anymore; and you don't have to be one to make a difference. In this talk, Tremaine McKinley will share his journey as a daily user of web accessibility tools and why it's becoming a non-negotiable skill for modern developers and designers. We'll demystify web accessibility, explore some tools and best practices that make a real impact, and get hands-on with live demos to show how you can start building a more inclusive web right now. Q&A to follow."
+        },
+        {
+          "order": 3,
+          "type": "wrapUp",
+          "activity": "Community Wrap-Up & Closing",
+          "durationMinutes": 30,
+          "details": "We'll wind down with conversation, connection, and appreciation for our attendees and speaker. We'll also give some shoutouts for upcoming events, snap a group photo, and provide an opportunity for feedback close out the night by 8."
+        }
+      ],
+      "speakers": [
+        {
+          "key": "tremaineMcKinley",
+          "name": "Tremaine McKinley",
+          "talkTitle": "Crash Course: Web Accessibility"
+        }
+      ],
+      "rsvp": {
+        "platform": "Meetup",
+        "details": "Please confirm your attendance via the Meetup app so we can plan accordingly.",
+        "link": "https://www.meetup.com/memphis-technology-user-groups/events/310408504/?eventOrigin=home_page_upcoming_events%24all"
+      },
+      "sponsors": [
+        {
+          "name": "Epicenter",
+          "contribution": "providing food"
+        },
+        {
+          "name": "Crews Center for Entrepreneurship",
+          "contribution": "hosting us"
+        }
+      ],
+      "parkingInfo": "Simply park outside. There should be ample street parking close by."
+    },
+    "topics": [
+      "Events in Memphis, TN",
+      "Web Accessibility",
+      "Web Design",
+      "JavaScript",
+      "Software Development",
+      "Web Development"
+    ]
+  }
+]

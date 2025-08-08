@@ -123,6 +123,9 @@ export default function EventDetailPage() {
     );
   }
 
+  // Check if the event has passed
+  const isEventPast = new Date(event.date + 'T00:00:00') < new Date();
+
   // Helper to find speaker details for an agenda item
   const getSpeakerForAgenda = (speakerKey?: string) => {
     if (!speakerKey) return null;
@@ -214,21 +217,23 @@ export default function EventDetailPage() {
           )}
 
 
-          {/* RSVP Information */}
-          <section>
-            <h2 className="text-2xl font-semibold mb-3 text-gray-700 dark:text-gray-200">RSVP</h2>
-            <p className="leading-relaxed mb-3">{event.description.rsvp.details}</p>
-            {event.description.rsvp.link && (
-              <a
-                href={event.description.rsvp.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:shadow-lg transition-transform transform hover:scale-105 duration-300 ease-in-out"
-              >
-                RSVP via {event.description.rsvp.platform}
-              </a>
-            )}
-          </section>
+          {/* RSVP Information - Only show for upcoming events */}
+          {!isEventPast && (
+            <section>
+              <h2 className="text-2xl font-semibold mb-3 text-gray-700 dark:text-gray-200">RSVP</h2>
+              <p className="leading-relaxed mb-3">{event.description.rsvp.details}</p>
+              {event.description.rsvp.link && (
+                <a
+                  href={event.description.rsvp.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:shadow-lg transition-transform transform hover:scale-105 duration-300 ease-in-out"
+                >
+                  RSVP via {event.description.rsvp.platform}
+                </a>
+              )}
+            </section>
+          )}
 
           {/* Sponsors */}
           {event.description.sponsors && event.description.sponsors.length > 0 && (

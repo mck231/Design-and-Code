@@ -102,6 +102,7 @@ export default function DuckNavButton({
       className={`relative overflow-visible ${sizeClass} ${className}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      title="Hall of Fame"
     >
       <svg
         ref={svgRef}
