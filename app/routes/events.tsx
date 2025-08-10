@@ -124,7 +124,7 @@ export default function EventsPage() {
                 {upcomingEvents.length > 0 && (
                     <section className="mb-12 md:mb-16">
                         <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-gray-800 dark:text-gray-200">Upcoming Events</h2>
-                        <div className="grid gap-6 md:gap-8 lg:grid-cols-1"> {/* Changed to 1 column for more focus per event */}
+                        <div className="grid gap-6 md:gap-8 lg:grid-cols-1 isolate"> {/* Added isolate */}
                             {upcomingEvents.map((event) => (
                                 <EventCard key={event.id} event={event} />
                             ))}
@@ -135,7 +135,7 @@ export default function EventsPage() {
                 {pastEvents.length > 0 && (
                     <section>
                         <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-gray-800 dark:text-gray-200">Past Events</h2>
-                        <div className="grid gap-6 md:gap-8 lg:grid-cols-1"> {/* Changed to 1 column */}
+                        <div className="grid gap-6 md:gap-8 lg:grid-cols-1 isolate"> {/* Added isolate */}
                             {pastEvents.map((event) => (
                                 <EventCard key={event.id} event={event} isPastEvent={true} />
                             ))}
@@ -161,7 +161,7 @@ interface EventCardProps {
 
 function EventCard({ event, isPastEvent = false }: EventCardProps) {
     return (
-        <div className={`bg-white dark:bg-gray-800 shadow-lg rounded-xl overflow-hidden transition-all duration-300 hover:shadow-2xl ${isPastEvent ? 'opacity-75' : ''}`}>
+        <div className={`bg-white dark:bg-gray-800 shadow-lg rounded-xl transition-all duration-300 hover:shadow-2xl ${isPastEvent ? 'opacity-75' : ''} relative`}>
             <div className="p-6 md:p-8">
                 <div className="md:flex md:items-start md:justify-between mb-3">
                     <div>
@@ -212,7 +212,7 @@ function EventCard({ event, isPastEvent = false }: EventCardProps) {
                 )}
 
                 {/* Placeholder for "Read More" - this could link to a dynamic route like /events/[event.slug] */}
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 relative">
                     <Link
                         to={`/events/${event.slug}`} // Assuming you'll set up routes for individual event details
                         className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:shadow-lg transition-transform transform hover:scale-105 duration-300 ease-in-out"
@@ -221,16 +221,18 @@ function EventCard({ event, isPastEvent = false }: EventCardProps) {
                     </Link>
                     
                     {/* Share Buttons */}
-                    <ShareButtons 
-                        event={{
-                            title: event.title,
-                            date: event.date,
-                            slug: event.slug,
-                            topics: event.topics,
-                            summary: event.summary
-                        }}
-                        variant="compact"
-                    />
+                    <div className="relative z-10">
+                        <ShareButtons 
+                            event={{
+                                title: event.title,
+                                date: event.date,
+                                slug: event.slug,
+                                topics: event.topics,
+                                summary: event.summary
+                            }}
+                            variant="compact"
+                        />
+                    </div>
                 </div>
             </div>
         </div>

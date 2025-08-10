@@ -1,5 +1,6 @@
 // app/components/ShareButtons.tsx
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { Share2, Copy, Check } from 'lucide-react';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
@@ -17,8 +18,11 @@ interface ShareButtonsProps {
 
 export default function ShareButtons({ event, variant = 'full', className = '' }: ShareButtonsProps) {
   const [copiedLink, setCopiedLink] = useState(false);
-  const [eventUrl, setEventUrl] = useState('');
   const [showDropdown, setShowDropdown] = useState(false);
+  const [dropdownPosition, setDropdownPosition] = useState<'below' | 'above'>('below');
+  const [eventUrl, setEventUrl] = useState('');
+  const [buttonPosition, setButtonPosition] = useState<{ top: number; left: number; right: number; bottom: number } | null>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   // Set the URL on the client side to avoid hydration mismatch
   useEffect(() => {
@@ -75,6 +79,42 @@ export default function ShareButtons({ event, variant = 'full', className = '' }
     email: `mailto:?subject=${encodeURIComponent(shareContent.emailSubject)}&body=${encodeURIComponent(shareContent.emailBody)}`
   };
 
+  // Function to detect if dropdown should open above or below
+  const detectDropdownPosition = () => {
+    if (!buttonRef.current) return 'below';
+    
+    const rect = buttonRef.current.getBoundingClientRect();
+    const viewportHeight = window.innerHeight;
+    const dropdownHeight = 280; // Approximate height of dropdown menu
+    const spaceBelow = viewportHeight - rect.bottom;
+    const spaceAbove = rect.top;
+    
+    // Store button position for portal
+    setButtonPosition({
+      top: rect.top,
+      left: rect.left,
+      right: rect.right,
+      bottom: rect.bottom
+    });
+    
+    // If not enough space below but enough space above, position above
+    if (spaceBelow < dropdownHeight && spaceAbove > dropdownHeight) {
+      return 'above';
+    }
+    
+    return 'below';
+  };
+
+  // Handle dropdown toggle with position detection
+  const toggleDropdown = () => {
+    if (!showDropdown) {
+      // Detect position before showing dropdown
+      const position = detectDropdownPosition();
+      setDropdownPosition(position);
+    }
+    setShowDropdown(!showDropdown);
+  };
+
   // Discord share function (copy formatted message)
   const shareToDiscord = async () => {
     const discordMessage = `🎯 **${event.title}**\n📅 ${formatDateForSharing(event.date)}\n\n${event.summary}\n\n🔗 ${shareUrl}\n\n${generateHashtags().replace(/#/g, '')}`;
@@ -94,110 +134,127 @@ export default function ShareButtons({ event, variant = 'full', className = '' }
   
   const buttonClass = variant === 'compact' ? compactClass : fullClass;
 
+  // Portal dropdown component
+  const DropdownPortal = () => {
+    if (!showDropdown || !buttonPosition) return null;
+
+    const dropdownStyle = {
+      position: 'fixed' as const,
+      left: buttonPosition.right - 192, // 192px = w-48
+      top: dropdownPosition === 'above' 
+        ? buttonPosition.top - 280 - 8 
+        : buttonPosition.bottom + 8,
+      zIndex: 50,
+    };
+
+    return createPortal(
+      <>
+        {/* Backdrop */}
+        <div 
+          className="fixed inset-0 z-40" 
+          onClick={() => setShowDropdown(false)}
+        />
+        
+        {/* Dropdown */}
+        <div style={dropdownStyle} className="w-48 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 z-50">
+          <div className="py-2">
+            <a
+              href={shareUrls.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+              onClick={() => setShowDropdown(false)}
+            >
+              <i className="bi bi-linkedin w-4 h-4 text-blue-600"></i>
+              LinkedIn
+            </a>
+
+            <a
+              href={shareUrls.twitter}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+              onClick={() => setShowDropdown(false)}
+            >
+              <i className="bi bi-twitter-x w-4 h-4 text-black dark:text-white"></i>
+              X (Twitter)
+            </a>
+
+            <a
+              href={shareUrls.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+              onClick={() => setShowDropdown(false)}
+            >
+              <i className="bi bi-facebook w-4 h-4 text-blue-700"></i>
+              Facebook
+            </a>
+
+            <button
+              onClick={() => {
+                shareToDiscord();
+                setShowDropdown(false);
+              }}
+              className="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors w-full text-left"
+            >
+              <i className="bi bi-discord w-4 h-4 text-indigo-600"></i>
+              Discord
+            </button>
+
+            <a
+              href={shareUrls.email}
+              className="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+              onClick={() => setShowDropdown(false)}
+            >
+              <i className="bi bi-envelope w-4 h-4 text-gray-600 dark:text-gray-400"></i>
+              Email
+            </a>
+
+            <div className="border-t border-gray-200 dark:border-gray-600 my-1" />
+
+            <button
+              onClick={() => {
+                copyToClipboard();
+                setShowDropdown(false);
+              }}
+              className="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors w-full text-left"
+            >
+              {copiedLink ? (
+                <>
+                  <Check className="w-4 h-4 text-green-600" />
+                  Copied!
+                </>
+              ) : (
+                <>
+                  <Copy className="w-4 h-4 text-gray-600 dark:text-gray-400" />
+                  Copy Link
+                </>
+              )}
+            </button>
+          </div>
+        </div>
+      </>,
+      document.body
+    );
+  };
+
   if (variant === 'compact') {
     return (
-      <div className={`relative ${className}`}>
-        {/* Share Button with Dropdown */}
-        <button
-          onClick={() => setShowDropdown(!showDropdown)}
-          className="inline-flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg transition-colors duration-200"
-          title="Share this event"
-        >
-          <Share2 className="w-4 h-4" />
-          Share
-        </button>
-
-        {/* Dropdown Menu */}
-        {showDropdown && (
-          <>
-            {/* Backdrop to close dropdown when clicking outside */}
-            <div 
-              className="fixed inset-0 z-10" 
-              onClick={() => setShowDropdown(false)}
-            />
-            
-            {/* Dropdown Content */}
-            <div className="absolute right-0 top-full mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 z-20">
-              <div className="py-2">
-                <a
-                  href={shareUrls.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-                  onClick={() => setShowDropdown(false)}
-                >
-                  <i className="bi bi-linkedin w-4 h-4 text-blue-600"></i>
-                  LinkedIn
-                </a>
-
-                <a
-                  href={shareUrls.twitter}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-                  onClick={() => setShowDropdown(false)}
-                >
-                  <i className="bi bi-twitter-x w-4 h-4 text-black dark:text-white"></i>
-                  X (Twitter)
-                </a>
-
-                <a
-                  href={shareUrls.facebook}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-                  onClick={() => setShowDropdown(false)}
-                >
-                  <i className="bi bi-facebook w-4 h-4 text-blue-700"></i>
-                  Facebook
-                </a>
-
-                <button
-                  onClick={() => {
-                    shareToDiscord();
-                    setShowDropdown(false);
-                  }}
-                  className="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors w-full text-left"
-                >
-                  <i className="bi bi-discord w-4 h-4 text-indigo-600"></i>
-                  Discord
-                </button>
-
-                <a
-                  href={shareUrls.email}
-                  className="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-                  onClick={() => setShowDropdown(false)}
-                >
-                  <i className="bi bi-envelope w-4 h-4 text-gray-600 dark:text-gray-400"></i>
-                  Email
-                </a>
-
-                <div className="border-t border-gray-200 dark:border-gray-600 my-1" />
-
-                <button
-                  onClick={() => {
-                    copyToClipboard();
-                    setShowDropdown(false);
-                  }}
-                  className="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors w-full text-left"
-                >
-                  {copiedLink ? (
-                    <>
-                      <Check className="w-4 h-4 text-green-600" />
-                      Copied!
-                    </>
-                  ) : (
-                    <>
-                      <Copy className="w-4 h-4 text-gray-600 dark:text-gray-400" />
-                      Copy Link
-                    </>
-                  )}
-                </button>
-              </div>
-            </div>
-          </>
-        )}
-      </div>
+      <>
+        <div className={`relative ${className}`}>
+          <button
+            ref={buttonRef}
+            onClick={toggleDropdown}
+            className="inline-flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg transition-colors duration-200"
+            title="Share this event"
+          >
+            <Share2 className="w-4 h-4" />
+            Share
+          </button>
+        </div>
+        <DropdownPortal />
+      </>
     );
   }
 
