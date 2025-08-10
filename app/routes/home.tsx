@@ -41,15 +41,25 @@ export async function loader({}: LoaderFunctionArgs) { // Using LoaderFunctionAr
 }
 
 export const meta: MetaFunction = () => {
+  const logoUrl = `https://memphisdesignandcode.com/Design_&_Code_Logo_Main%20logo%20+%20text.svg`;
+  
   return [
     { title: "Design & Code Memphis | Tech Community, Events & Resources" },
     { name: "description", content: "Join Design & Code Memphis, a vibrant community for designers, developers, and tech enthusiasts. Explore upcoming events, workshops, and resources to connect, learn, and grow in the Memphis tech scene." },
-    // You can add more meta tags here (e.g., Open Graph for social sharing)
+    
+    // Open Graph meta tags for social sharing
     { property: "og:title", content: "Design & Code Memphis | Tech Community, Events & Resources" },
     { property: "og:description", content: "Connect, learn, and create with Memphis's leading tech community. Find events, resources, and networking opportunities." },
-    // { property: "og:image", content: "your-logo-or-banner-url.jpg" }, // Add a URL to an image for social sharing
-    // { property: "og:url", content: "your-website-url.com" },
-    // { name: "twitter:card", content: "summary_large_image" },
+    { property: "og:image", content: logoUrl },
+    { property: "og:url", content: "https://memphisdesignandcode.com" },
+    { property: "og:type", content: "website" },
+    { property: "og:site_name", content: "Design & Code Memphis" },
+    
+    // Twitter Card meta tags
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: "Design & Code Memphis | Tech Community, Events & Resources" },
+    { name: "twitter:description", content: "Connect, learn, and create with Memphis's leading tech community. Find events, resources, and networking opportunities." },
+    { name: "twitter:image", content: logoUrl },
   ];
 };
 

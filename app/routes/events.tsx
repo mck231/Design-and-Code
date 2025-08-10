@@ -1,5 +1,6 @@
 // app/routes/events.tsx
 import { Link } from "react-router-dom";
+import ShareButtons from "../components/ShareButtons";
 
 // Define TypeScript interfaces for our event data structure
 // This should match the structure of your may-2025.json
@@ -80,9 +81,25 @@ function formatDate(dateString: string): string {
 }
 
 export function meta() { // Removed args: Route.MetaArgs as it might not be set up yet
+    const logoUrl = `https://memphisdesignandcode.com/Design_&_Code_Logo_Main%20logo%20+%20text.svg`;
+    
     return [
         { title: "Upcoming Events | Design & Code Memphis" }, // Corrected typo "Desing"
         { name: "description", content: "Join us for our upcoming events, workshops, and meetups in Memphis. Stay updated with the latest happenings in the design and development community." },
+        
+        // Open Graph meta tags
+        { property: "og:title", content: "Upcoming Events | Design & Code Memphis" },
+        { property: "og:description", content: "Join us for our upcoming events, workshops, and meetups in Memphis. Stay updated with the latest happenings in the design and development community." },
+        { property: "og:image", content: logoUrl },
+        { property: "og:url", content: "https://memphisdesignandcode.com/events" },
+        { property: "og:type", content: "website" },
+        { property: "og:site_name", content: "Design & Code Memphis" },
+        
+        // Twitter Card meta tags
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: "Upcoming Events | Design & Code Memphis" },
+        { name: "twitter:description", content: "Join us for our upcoming events, workshops, and meetups in Memphis. Stay updated with the latest happenings in the design and development community." },
+        { name: "twitter:image", content: logoUrl },
     ];
 }
 
@@ -195,12 +212,26 @@ function EventCard({ event, isPastEvent = false }: EventCardProps) {
                 )}
 
                 {/* Placeholder for "Read More" - this could link to a dynamic route like /events/[event.slug] */}
-                <Link
-                    to={`/events/${event.slug}`} // Assuming you'll set up routes for individual event details
-                    className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:shadow-lg transition-transform transform hover:scale-105 duration-300 ease-in-out"
-                >
-                    Read More & See Full Agenda &rarr;
-                </Link>
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                    <Link
+                        to={`/events/${event.slug}`} // Assuming you'll set up routes for individual event details
+                        className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:shadow-lg transition-transform transform hover:scale-105 duration-300 ease-in-out"
+                    >
+                        Read More & See Full Agenda &rarr;
+                    </Link>
+                    
+                    {/* Share Buttons */}
+                    <ShareButtons 
+                        event={{
+                            title: event.title,
+                            date: event.date,
+                            slug: event.slug,
+                            topics: event.topics,
+                            summary: event.summary
+                        }}
+                        variant="compact"
+                    />
+                </div>
             </div>
         </div>
     );

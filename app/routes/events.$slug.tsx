@@ -1,6 +1,7 @@
 // app/routes/events.$slug.tsx
 import { useParams, Link } from "react-router-dom";
 import { type MetaFunction, type LoaderFunction, useLoaderData, redirect } from "react-router-dom"; // Using react-router-dom's types
+import ShareButtons from "../components/ShareButtons";
 
 // Re-using the Event interface from your events listing page or define it here
 // Ensure this matches your JSON structure
@@ -99,9 +100,32 @@ export const meta: MetaFunction = ({ data }) => {
         { name: "description", content: "The event you are looking for could not be found." }
     ];
   }
+
+  // Generate the full event URL for sharing
+  const eventUrl = `https://memphisdesignandcode.com/events/${event.slug}`;
+  const logoUrl = `https://memphisdesignandcode.com/Design_&_Code_Logo_Main%20logo%20+%20text.svg`;
+  
   return [
     { title: `${event.title} | Design & Code Memphis` },
     { name: "description", content: event.summary },
+    
+    // Open Graph meta tags for rich social sharing
+    { property: "og:title", content: event.title },
+    { property: "og:description", content: event.summary },
+    { property: "og:image", content: logoUrl },
+    { property: "og:url", content: eventUrl },
+    { property: "og:type", content: "event" },
+    { property: "og:site_name", content: "Design & Code Memphis" },
+    
+    // Twitter Card meta tags
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: event.title },
+    { name: "twitter:description", content: event.summary },
+    { name: "twitter:image", content: logoUrl },
+    
+    // Additional event-specific meta tags
+    { property: "event:start_time", content: event.date + "T18:00:00" }, // Assuming 6 PM start
+    { property: "event:location", content: event.location.name },
   ];
 };
 
@@ -147,12 +171,31 @@ export default function EventDetailPage() {
 
         {/* Event Header */}
         <header className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold text-blue-700 dark:text-blue-400 mb-3">{event.title}</h1>
-          <div className="flex flex-wrap text-sm text-gray-600 dark:text-gray-400 gap-x-4 gap-y-1 mb-2">
-            <span><strong>Date:</strong> {formatDate(event.date)}</span>
-            <span><strong>Time:</strong> {event.time.full}</span>
-            <span><strong>Location:</strong> {event.location.name}</span>
+          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
+            <div className="flex-1">
+              <h1 className="text-3xl md:text-4xl font-bold text-blue-700 dark:text-blue-400 mb-3">{event.title}</h1>
+              <div className="flex flex-wrap text-sm text-gray-600 dark:text-gray-400 gap-x-4 gap-y-1 mb-2">
+                <span><strong>Date:</strong> {formatDate(event.date)}</span>
+                <span><strong>Time:</strong> {event.time.full}</span>
+                <span><strong>Location:</strong> {event.location.name}</span>
+              </div>
+            </div>
+            
+            {/* Compact Share Buttons */}
+            <div className="flex-shrink-0">
+              <ShareButtons 
+                event={{
+                  title: event.title,
+                  date: event.date,
+                  slug: event.slug,
+                  topics: event.topics,
+                  summary: event.summary
+                }}
+                variant="compact"
+              />
+            </div>
           </div>
+          
           {/* Topics as Chips */}
           {event.topics && event.topics.length > 0 && (
               <div className="flex flex-wrap gap-2 mt-3 mb-4">
@@ -256,6 +299,20 @@ export default function EventDetailPage() {
               <p className="leading-relaxed">{event.description.parkingInfo}</p>
             </section>
           )}
+
+          {/* Share This Event - Full Version */}
+          <section className="pt-8 border-t border-gray-200 dark:border-gray-700">
+            <ShareButtons 
+              event={{
+                title: event.title,
+                date: event.date,
+                slug: event.slug,
+                topics: event.topics,
+                summary: event.summary
+              }}
+              variant="full"
+            />
+          </section>
         </div>
       </div>
     </div>
