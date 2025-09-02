@@ -54,6 +54,17 @@ export default function Header() {
         {/* Apply 'hidden' class based on isMobileMenuOpen state for small screens, always flex for md and up */}
         <div className={`${isMobileMenuOpen ? 'block' : 'hidden'} md:flex md:items-center md:w-auto w-full`} id="navbarNav">
           <ul className="flex flex-col md:flex-row md:space-x-2 lg:space-x-4 mt-4 md:mt-0 text-sm items-center"> {/* Added items-center for vertical alignment */}
+            {import.meta.env.DEV && (
+              <li>
+                <Link
+                  to="/admin"
+                  className={linkClassName + " border-red-500 text-red-500 hover:bg-red-500"}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Admin
+                </Link>
+              </li>
+            )}
             <li>
               <Link
                 to="/"
