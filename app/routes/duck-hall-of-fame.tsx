@@ -53,6 +53,13 @@ const speakers = [
     event: "July 2025",
     photo: "/speaker-pictures/StephL.jpeg"
   },
+  { 
+    id: 7, 
+    name: "Tremaine McKinley", 
+    talkTitle: "Crash Course: Web Accessibility in 2026",
+    event: "August 2025",
+    photo: "/speaker-pictures/Tremaine.jpeg"
+  },
 ];
 
 export default function DuckHallOfFamePage() {
