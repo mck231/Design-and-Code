@@ -1,0 +1,81 @@
+[
+  {
+    "id": "dc-20250917-animating-uis-with-svgs",
+    "slug": "animating-uis-with-svgs-september-2025",
+    "title": "Design & Code: Animating Your UIs with SVGs w/ Bryce Sharp",
+    "date": "2025-09-17",
+    "time": {
+      "start": "6:00 PM",
+      "end": "8:00 PM",
+      "full": "6:00 PM - 8:00 PM"
+    },
+    "location": {
+      "name": "Crews Center for Entrepreneurship, 2nd Floor - University of Memphis",
+      "address": null
+    },
+    "summary": "Ready to bring your user interfaces to life? Join us for an evening dedicated to SVG animations! Bryce Sharp will show you how to combine the power of animation with the portability of SVGs to create smoother, more intuitive user experiences. We'll cover the basics of SVGs, explore effective animation techniques, and look at real-world examples to help you create more engaging designs.",
+    "description": {
+      "whoIsThisFor": "This MeetUp serves as a check-in with the community of designers and developers in the City of Memphis. Whether you're a passionate beginner looking to get into tech, an experienced professional eager to share your knowledge, or someone curious to learn from others, this MeetUp is perfect for you.",
+      "agenda": [
+        {
+          "order": 1,
+          "type": "networking",
+          "activity": "Mix, Mingle, and Munch",
+          "durationMinutes": 25,
+          "details": "Grab some food, say hello, and get to know others in the room."
+        },
+        {
+          "order": 2,
+          "type": "talk",
+          "speakerKey": "bryceSharp",
+          "activity": "Keynote Speaker: Bryce Sharp",
+          "durationMinutes": 60,
+          "details": "Animating Your UIs with SVGs\n\nReady to bring your user interfaces to life? Join us for an evening dedicated to SVG animations! Our speaker, Bryce Sharp, will show you how to combine the power of animation with the portability of SVGs to create smoother, more intuitive user experiences. We'll cover the basics of SVGs, explore effective animation techniques, and look at real-world examples to help you create more engaging designs."
+        },
+        {
+          "order": 3,
+          "type": "wrapUp",
+          "activity": "Community Wrap-Up & Closing",
+          "durationMinutes": 30,
+          "details": "We'll wind down with conversation, connection, and appreciation for our attendees and speaker. We'll also give some shoutouts for upcoming events, snap a group photo, and provide an opportunity for feedback close out the night by 8."
+        }
+      ],
+      "speakers": [
+        {
+          "key": "bryceSharp",
+          "name": "Bryce Sharp",
+          "talkTitle": "Animating Your UIs with SVGs"
+        }
+      ],
+      "rsvp": {
+        "platform": "Meetup",
+        "details": "Please confirm your attendance via the Meetup app so we can plan accordingly.",
+        "link": "https://www.meetup.com/memphis-technology-user-groups/events/310883767/?eventOrigin=home_page_upcoming_events%24all"
+      },
+      "sponsors": [
+        {
+          "name": "Epicenter",
+          "contribution": "providing food"
+        },
+        {
+          "name": "Crews Center for Entrepreneurship",
+          "contribution": "hosting us"
+        }
+      ],
+      "parkingInfo": "Simply park outside. There should be ample street parking close by.",
+      "stayConnected": [
+        "Learn more about Design and Code at our website - www.memphisdesignandcode.com",
+        "Entrepreneurs and builders, learn more about Epicenter’s mission and resources - www.epicentermemphis.org",
+        "U of M students, see what else the Crews Center has to offer - www.memphis.edu/crews/"
+      ]
+    },
+    "topics": [
+      "Events in Memphis, TN",
+      "JavaScript",
+      "Web Development",
+      "Front-end Development",
+      "Software Development",
+      "SVG"
+    ]
+  }
+]
