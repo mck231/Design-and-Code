@@ -53,12 +53,19 @@ const speakers = [
     event: "July 2025",
     photo: "/speaker-pictures/StephL.jpeg"
   },
-   { 
+  { 
     id: 7,
     name: "Tremaine McKinley", 
     talkTitle: "Crash Course: Web Accessibility",
     event: "August 2025",
     photo: "/speaker-pictures/Tremaine.jpeg" 
+  },
+  { 
+    id: 8,
+    name: "Bryce Sharp", 
+    talkTitle: "Animating Your UIs with SVGs",
+    event: "September 2025",
+    photo: "/speaker-pictures/BryceSharp.jpg" 
   },
 ];
 
