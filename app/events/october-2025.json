@@ -1,0 +1,83 @@
+[
+  {
+    "id": "dc-20251015-nightmare-on-design-street",
+    "slug": "nightmare-on-design-street-october-2025",
+    "title": "Nightmare on Design Street: How We Adapt When Tech Gets Terrifying w/ John Lloyd",
+    "date": "2025-10-15",
+    "time": {
+      "start": "6:00 PM",
+      "end": "8:00 PM",
+      "full": "6:00 PM - 8:00 PM"
+    },
+    "location": {
+      "name": "Crews Center for Entrepreneurship, 2nd Floor - University of Memphis",
+      "address": "3618 Walker Avenue, Memphis, TN"
+    },
+    "summary": "AI might feel like the biggest shift we've faced in our careers — but it's not the first, and it won't be the last. Join John Lloyd, a seasoned design leader and former Senior Director of Design, as he shares spooky tales of adapting to waves of technological change. From major pivots to ongoing challenges and future predictions, this Halloween-themed talk explores how to navigate an industry that never stands still.",
+    "description": {
+      "whoIsThisFor": "This MeetUp is for Memphis' community of designers, developers, and anyone curious about the ever-changing world of technology. Whether you're a beginner trying to break into tech, a seasoned professional looking to sharpen your skills, or someone simply interested in how technology shapes our work and lives, this night is for you.",
+      "agenda": [
+        {
+          "order": 1,
+          "type": "networking",
+          "activity": "Mix, Mingle, and Munch",
+          "durationMinutes": 25,
+          "details": "Grab some food, say hello, and connect with others in the room."
+        },
+        {
+          "order": 2,
+          "type": "talk",
+          "speakerKey": "johnLloyd",
+          "activity": "Keynote Speaker: John Lloyd",
+          "durationMinutes": 60,
+          "details": "Spooky Tales of Adapting to Tech\n\nAI might feel like the biggest shift we've faced in our careers — but it's not the first, and it won't be the last. Our speaker, a seasoned design leader and former Senior Director of Design, will share stories from their own journey adapting to waves of technological change. From major pivots to ongoing challenges and future predictions, this talk is all about navigating an industry that never stands still.\n\nThe key takeaway? Tools will always evolve — but timeless skills like craft, principles, relationships, communication, and empathy are far harder to replace with robots or new platforms. Join us for an insightful discussion about what stays constant when everything else changes, all from a designer's perspective."
+        },
+        {
+          "order": 3,
+          "type": "wrapUp",
+          "activity": "Community Wrap-Up & Closing",
+          "durationMinutes": 30,
+          "details": "We'll wrap up with conversation, connection, and appreciation for everyone who made the night possible. Expect shoutouts for upcoming events, a group photo, and space for feedback before we close out the evening."
+        }
+      ],
+      "speakers": [
+        {
+          "key": "johnLloyd",
+          "name": "John Lloyd",
+          "talkTitle": "Spooky Tales of Adapting to Tech"
+        }
+      ],
+      "rsvp": {
+        "platform": "Meetup",
+        "details": "Please confirm your attendance via the Meetup app so we can plan accordingly.",
+        "link": "https://www.meetup.com/memphis-technology-user-groups/events/311360325/?eventOrigin=home_page_upcoming_events%24all"
+      },
+      "sponsors": [
+        {
+          "name": "Epicenter",
+          "contribution": "providing food"
+        },
+        {
+          "name": "Crews Center for Entrepreneurship",
+          "contribution": "hosting us"
+        }
+      ],
+      "parkingInfo": "There's ample free street parking available near the venue.",
+      "stayConnected": [
+        "Learn more about Design and Code at our website - www.memphisdesignandcode.com",
+        "Entrepreneurs and builders, learn more about Epicenter's mission and resources - www.epicentermemphis.org",
+        "U of M students, see what else the Crews Center has to offer - www.memphis.edu/crews/"
+      ]
+    },
+    "topics": [
+      "Events in Memphis, TN",
+      "JavaScript",
+      "Front-end Development",
+      "Software Development",
+      "Web Development",
+      "Design Leadership",
+      "Career Development",
+      "Technology Adaptation"
+    ]
+  }
+]
