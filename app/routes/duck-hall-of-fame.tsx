@@ -72,7 +72,7 @@ const speakers = [
     name: "John Lloyd", 
     talkTitle: "Nightmare on Design Street: How We Adapt When Tech Gets Terrifying",
     event: "October 2025",
-    photo: "/speaker-pictures/JohnLloyd.jpeg" 
+    photo: "/speaker-pictures/JohnL.jpg" 
   },
 ];
 
