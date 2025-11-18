@@ -67,6 +67,13 @@ const speakers = [
     event: "September 2025",
     photo: "/speaker-pictures/BryceSharp.jpg" 
   },
+  { 
+    id: 9,
+    name: "John Lloyd", 
+    talkTitle: "Nightmare on Design Street: How We Adapt When Tech Gets Terrifying",
+    event: "October 2025",
+    photo: "/speaker-pictures/JohnLloyd.jpeg" 
+  },
 ];
 
 export default function DuckHallOfFamePage() {

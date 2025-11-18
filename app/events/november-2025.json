@@ -1,0 +1,83 @@
+[
+  {
+    "id": "dc-20251119-nightmare-on-design-street",
+    "slug": "design-challenges-for-UAV-flight-controls-november-2025",
+    "title": "UX Product Design Challenges for UAV Flight Controls w/ Dana Root",
+    "date": "2025-11-19",
+    "time": {
+      "start": "6:00 PM",
+      "end": "8:00 PM",
+      "full": "6:00 PM - 8:00 PM"
+    },
+    "location": {
+      "name": "Crews Center for Entrepreneurship, 2nd Floor - University of Memphis",
+      "address": "3618 Walker Avenue, Memphis, TN"
+    },
+    "summary": "Get UX mission-ready to launch UAV flight controls for multiple user types. Understand more about specific pilot and payload operator challenges in real-life defense-based scenarios. Dana Root will share unique user experience and product design challenges while redesigning legacy systems.",
+    "description": {
+      "whoIsThisFor": "This MeetUp is for Memphis' community of designers, developers, and anyone curious about the ever-changing world of technology. Whether you're a beginner trying to break into tech, a seasoned professional looking to sharpen your skills, or someone simply interested in how technology shapes our work and lives, this night is for you.",
+      "agenda": [
+        {
+          "order": 1,
+          "type": "networking",
+          "activity": "Mix, Mingle, and Munch",
+          "durationMinutes": 25,
+          "details": "Grab some food, say hello, and connect with others in the room."
+        },
+        {
+          "order": 2,
+          "type": "talk",
+          "speakerKey": "danaRoot",
+          "activity": "Keynote Speaker: Dana Root",
+          "durationMinutes": 60,
+          "details": "Get UX mission-ready to launch UAV flight controls for multiple user types. Understand more about specific pilot and payload operator challenges in real-life defense-based scenarios. Dana Root will share unique user experience and product design challenges while redesigning legacy systems."
+        },
+        {
+          "order": 3,
+          "type": "wrapUp",
+          "activity": "Community Wrap-Up & Closing",
+          "durationMinutes": 30,
+          "details": "We'll wrap up with conversation, connection, and appreciation for everyone who made the night possible. Expect shoutouts for upcoming events, a group photo, and space for feedback before we close out the evening."
+        }
+      ],
+      "speakers": [
+        {
+          "key": "danaRoot",
+          "name": "Dana Root",
+          "talkTitle": "UX Product Design Challenges for UAV Flight Controls"
+        }
+      ],
+      "rsvp": {
+        "platform": "Meetup",
+        "details": "Please confirm your attendance via the Meetup app so we can plan accordingly.",
+        "link": "https://www.meetup.com/memphis-technology-user-groups/events/311876290/"
+      },
+      "sponsors": [
+        {
+          "name": "Epicenter",
+          "contribution": "providing food"
+        },
+        {
+          "name": "Crews Center for Entrepreneurship",
+          "contribution": "hosting us"
+        }
+      ],
+      "parkingInfo": "There's ample free street parking available near the venue.",
+      "stayConnected": [
+        "Learn more about Design and Code at our website - www.memphisdesignandcode.com",
+        "Entrepreneurs and builders, learn more about Epicenter's mission and resources - www.epicentermemphis.org",
+        "U of M students, see what else the Crews Center has to offer - www.memphis.edu/crews/"
+      ]
+    },
+    "topics": [
+      "Events in Memphis, TN",
+      "JavaScript",
+      "Front-end Development",
+      "Software Development",
+      "Web Development",
+      "Design Leadership",
+      "Career Development",
+      "Technology Adaptation"
+    ]
+  }
+]
