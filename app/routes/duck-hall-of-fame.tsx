@@ -54,11 +54,25 @@ const speakers = [
     photo: "/speaker-pictures/StephL.jpeg"
   },
   { 
-    id: 7, 
+    id: 7,
     name: "Tremaine McKinley", 
-    talkTitle: "Crash Course: Web Accessibility in 2026",
+    talkTitle: "Crash Course: Web Accessibility",
     event: "August 2025",
-    photo: "/speaker-pictures/Tremaine.jpeg"
+    photo: "/speaker-pictures/Tremaine.jpeg" 
+  },
+  { 
+    id: 8,
+    name: "Bryce Sharp", 
+    talkTitle: "Animating Your UIs with SVGs",
+    event: "September 2025",
+    photo: "/speaker-pictures/BryceSharp.jpg" 
+  },
+  { 
+    id: 9,
+    name: "John Lloyd", 
+    talkTitle: "Nightmare on Design Street: How We Adapt When Tech Gets Terrifying",
+    event: "October 2025",
+    photo: "/speaker-pictures/JohnL.jpg" 
   },
 ];
 
