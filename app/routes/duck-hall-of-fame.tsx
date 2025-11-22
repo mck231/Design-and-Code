@@ -74,6 +74,13 @@ const speakers = [
     event: "October 2025",
     photo: "/speaker-pictures/JohnL.jpg" 
   },
+  { 
+    id: 10,
+    name: "Dana Root", 
+    talkTitle: "UX Product Design Challenges for UAV Flight Controls",
+    event: "November 2025",
+    photo: "/speaker-pictures/DanaR.jpg" 
+  },
 ];
 
 export default function DuckHallOfFamePage() {
@@ -97,6 +104,7 @@ export default function DuckHallOfFamePage() {
           {speakers.map((speaker) => (
             <SpeakerCard key={speaker.id} speaker={speaker} />
           ))}
+          <p className="text-center text-xl font-bold dark:text-gray-400 mt-6 self-center">See you in 2026!</p>
         </div>
 
         {/* Call to Action */}
