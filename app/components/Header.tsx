@@ -84,15 +84,17 @@ export default function Header() {
                 Events
               </Link>
             </li>
-            {/* <li>
-              <Link
-                to="/blog"
-                className={linkClassName}
-                onClick={() => setIsMobileMenuOpen(false)} // Close menu on click
-              >
-                Blog/Resources
-              </Link>
-            </li> */}
+            {import.meta.env.DEV && (
+              <li>
+                <Link
+                  to="/blog"
+                  className={linkClassName}
+                  onClick={() => setIsMobileMenuOpen(false)} // Close menu on click
+                >
+                  Blog
+                </Link>
+              </li>
+            )}
             <li>
               <Link
                 to="/about"
