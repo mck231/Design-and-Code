@@ -1,0 +1,80 @@
+[
+  {
+    "id": "dc-20260121-learn-enough-wordpress",
+    "slug": "learn-enough-wordpress-to-get-by-january-2026",
+    "title": "Design & Code: Learn Enough WordPress to Get By w/ Marco Cabrera",
+    "date": "2026-01-21",
+    "time": {
+      "start": "6:00 PM",
+      "end": "8:00 PM",
+      "full": "6:00 PM - 8:00 PM"
+    },
+    "location": {
+      "name": "Crews Center for Entrepreneurship, 2nd Floor - University of Memphis",
+      "address": null
+    },
+    "summary": "WordPress powers a massive chunk of the web, but it can be a 'black box' until you know where to look. Join Marco Cabrera for a solid foundation on how the platform actually works under the hood, from themes and plugins to custom code and security.",
+    "description": {
+      "whoIsThisFor": "This session is for new users, aspiring developers, or anyone who has ever felt frustrated by a WordPress site they didn't know how to fix. Our goal is to move you from 'guessing' to 'knowing' how to manage the platform confidently.",
+      "agenda": [
+        {
+          "order": 1,
+          "type": "networking",
+          "activity": "Mix, Mingle, and Munch",
+          "durationMinutes": 25,
+          "details": "Grab some food, say hello, and get to know others in the room."
+        },
+        {
+          "order": 2,
+          "type": "talk",
+          "speakerKey": "marcoCabrera",
+          "activity": "Keynote Speaker: Marco Cabrera",
+          "durationMinutes": 60,
+          "details": "Learn Enough WordPress to Get By\n\nWe aren't just going to look at the dashboard; we’re going to talk about how the pieces fit together so you can troubleshoot, edit, and secure a site. \n\nKey topics include:\n• Admin & Architecture: Navigating the backend.\n• Themes & Plugins: Understanding the difference and how to vet them effectively.\n• When Tools Aren't Enough: Using HTML, CSS, and JS to customize when builders hit a wall.\n• Routing & Structure: Finding where your data lives and how URLs work.\n• Security: Essential practices for locking down a site.\n• AI Assistance: Using AI and system prompts to help you troubleshoot and write custom snippets in real-time."
+        },
+        {
+          "order": 3,
+          "type": "wrapUp",
+          "activity": "Community Wrap-Up & Closing",
+          "durationMinutes": 30,
+          "details": "We'll wind down with conversation, connection, and appreciation for our attendees and speaker. We'll also give some shoutouts for upcoming events and snap a group photo."
+        }
+      ],
+      "speakers": [
+        {
+          "key": "marcoCabrera",
+          "name": "Marco Cabrera",
+          "talkTitle": "Learn Enough WordPress to Get By"
+        }
+      ],
+      "rsvp": {
+        "platform": "Meetup",
+        "details": "Please confirm your attendance via the Meetup app so we can plan accordingly.",
+        "link": "https://www.meetup.com/memphis-technology-user-groups/events/312725171/?isFirstPublish=true"
+      },
+      "sponsors": [
+        {
+          "name": "Epicenter",
+          "contribution": "providing food"
+        },
+        {
+          "name": "Crews Center for Entrepreneurship",
+          "contribution": "hosting us"
+        }
+      ],
+      "parkingInfo": "Simply park outside. There should be ample street parking close by.",
+      "stayConnected": [
+        "Learn more about Design and Code at our website - www.memphisdesignandcode.com",
+        "Explore resources for Memphis builders at Epicenter - www.epicentermemphis.org"
+      ]
+    },
+    "topics": [
+      "WordPress",
+      "Web Development",
+      "CMS",
+      "HTML",
+      "CSS",
+      "AI in Tech"
+    ]
+  }
+]
