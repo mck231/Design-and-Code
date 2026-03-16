@@ -1,0 +1,82 @@
+[
+  {
+    "id": "dc-20260318-web-workers",
+    "slug": "web-workers-march-2026",
+    "title": "Design & Code: Offload the Heavy Lifting with Web Workers",
+    "date": "2026-03-18",
+    "time": {
+      "start": "6:00 PM",
+      "end": "8:00 PM",
+      "full": "6:00 PM - 8:00 PM"
+    },
+    "location": {
+      "name": "Crews Center for Entrepreneurship, 2nd Floor - University of Memphis",
+      "address": "3618 Walker Avenue, Memphis, TN"
+    },
+    "summary": "Learn practical techniques to enhance web performance using JavaScript Web Workers. Join Coriano Harris for an interactive, hands-on workshop featuring a live demo building a Web Worker from scratch, a step-by-step browser-based walkthrough (no installation required), and real-world exercises to practice offloading intensive tasks.",
+    "description": {
+      "whoIsThisFor": "This event is for UI/UX designers, software engineers, and aspiring developers interested in building more responsive and performant web applications. Whether you're curious about closing the gap between design intent and high-performance code, this workshop is for you.",
+      "agenda": [
+        {
+          "order": 1,
+          "type": "networking",
+          "activity": "Mix, Mingle, and Munch",
+          "durationMinutes": 15,
+          "details": "Grab some food, say hello, and get to know others in the room."
+        },
+        {
+          "order": 2,
+          "type": "workshop",
+          "speakerKey": "corianoHarris",
+          "activity": "Workshop & Walkthrough: Coriano Harris",
+          "durationMinutes": 60,
+          "details": "Offload the Heavy Lifting with Web Workers\n\nA live coding session exploring practical techniques to build more responsive and performant web applications using JavaScript Web Workers.\n\nKey topics include:\n• Live demo: Building a Web Worker from scratch\n• Interactive, step-by-step walkthrough in your browser via CodePen.io (no account or installation required)\n• Practical tips to bridge the gap between design intent and high-performance code\n• Real-world exercises to practice offloading intensive tasks to Web Workers\n\nBring a laptop — it's highly recommended to follow along!"
+        },
+        {
+          "order": 3,
+          "type": "wrapUp",
+          "activity": "Open Mic & Networking Breakout Sessions",
+          "durationMinutes": 45,
+          "details": "Share what you built, ask questions, and connect with fellow attendees. We'll also give shoutouts for upcoming events and snap a group photo before we close out the evening."
+        }
+      ],
+      "speakers": [
+        {
+          "key": "corianoHarris",
+          "name": "Coriano Harris",
+          "talkTitle": "Offload the Heavy Lifting with Web Workers"
+        }
+      ],
+      "rsvp": {
+        "platform": "Meetup",
+        "details": "Please confirm your attendance via the Meetup app so we can plan accordingly.",
+        "link": "https://www.meetup.com/memphis-technology-user-groups/events/313534854/"
+      },
+      "sponsors": [
+        {
+          "name": "Epicenter",
+          "contribution": "providing food"
+        },
+        {
+          "name": "Crews Center for Entrepreneurship",
+          "contribution": "hosting us"
+        }
+      ],
+      "parkingInfo": "There's ample free street parking available near the venue.",
+      "stayConnected": [
+        "Learn more about Design and Code at our website - www.memphisdesignandcode.com",
+        "Entrepreneurs and builders, learn more about Epicenter's mission and resources - www.epicentermemphis.org",
+        "U of M students, see what else the Crews Center has to offer - www.memphis.edu/crews/"
+      ]
+    },
+    "topics": [
+      "JavaScript",
+      "Web Workers",
+      "Web Performance",
+      "Front-end Development",
+      "Web Development",
+      "Workshop",
+      "Events in Memphis, TN"
+    ]
+  }
+]
