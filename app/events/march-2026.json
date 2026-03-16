@@ -13,31 +13,31 @@
       "name": "Crews Center for Entrepreneurship, 2nd Floor - University of Memphis",
       "address": "3618 Walker Avenue, Memphis, TN"
     },
-    "summary": "Learn practical techniques to enhance web performance using JavaScript Web Workers. Join Coriano Harris for an interactive, hands-on workshop featuring a live demo building a Web Worker from scratch, a step-by-step browser-based walkthrough (no installation required), and real-world exercises to practice offloading intensive tasks.",
+    "summary": "Join us at the Crews Center for an interactive hands-on workshop and walkthrough. We're diving into the world of Web Workers in JavaScript to explore how they can keep your UIs smooth and your apps fast by offloading heavy tasks. Whether you're designing the experience or building it, this session provides actionable skills to make your web projects shine. We'll be using CodePen.io for the exercises, so there is nothing to install—you can jump in and start experimenting immediately.",
     "description": {
-      "whoIsThisFor": "This event is for UI/UX designers, software engineers, and aspiring developers interested in building more responsive and performant web applications. Whether you're curious about closing the gap between design intent and high-performance code, this workshop is for you.",
+      "whoIsThisFor": "UI/UX designers, software engineers, or aspiring developers who want to level up their web game and understand performance-focused development.",
       "agenda": [
         {
           "order": 1,
           "type": "networking",
-          "activity": "Mix, Mingle, and Munch",
+          "activity": "Mix and Mingle",
           "durationMinutes": 15,
-          "details": "Grab some food, say hello, and get to know others in the room."
+          "details": "Grab some food and meet new faces."
         },
         {
           "order": 2,
           "type": "workshop",
           "speakerKey": "corianoHarris",
-          "activity": "Workshop & Walkthrough: Coriano Harris",
+          "activity": "Workshop & Walkthrough",
           "durationMinutes": 60,
-          "details": "Offload the Heavy Lifting with Web Workers\n\nA live coding session exploring practical techniques to build more responsive and performant web applications using JavaScript Web Workers.\n\nKey topics include:\n• Live demo: Building a Web Worker from scratch\n• Interactive, step-by-step walkthrough in your browser via CodePen.io (no account or installation required)\n• Practical tips to bridge the gap between design intent and high-performance code\n• Real-world exercises to practice offloading intensive tasks to Web Workers\n\nBring a laptop — it's highly recommended to follow along!"
+          "details": "Live coding and interactive session with Coriano Harris.\n\nWhat we'll dive into:\n• Live Demo: Building a Web Worker from scratch to see how it operates outside the main thread.\n• Interactive Walkthrough: A step-by-step coding session you can follow along with in your browser.\n• Design & Dev Synergy: Practical tips for bridging the gap between design intent and high-performance execution.\n• Hands-on Exercises: Real-world scenarios to practice offloading intensive tasks.\n\nWhat to bring: A laptop is highly recommended so you can participate in the interactive CodePen exercises. No account is needed to get started!"
         },
         {
           "order": 3,
           "type": "wrapUp",
-          "activity": "Open Mic & Networking Breakout Sessions",
-          "durationMinutes": 45,
-          "details": "Share what you built, ask questions, and connect with fellow attendees. We'll also give shoutouts for upcoming events and snap a group photo before we close out the evening."
+          "activity": "Open Mic & Networking",
+          "durationMinutes": 30,
+          "details": "A space to share projects, ask follow-up questions, and connect with the community."
         }
       ],
       "speakers": [
@@ -49,7 +49,7 @@
       ],
       "rsvp": {
         "platform": "Meetup",
-        "details": "Please confirm your attendance via the Meetup app so we can plan accordingly.",
+        "details": "Please confirm your attendance via this Meetup page so we can get an accurate headcount for food.",
         "link": "https://www.meetup.com/memphis-technology-user-groups/events/313534854/"
       },
       "sponsors": [
@@ -62,7 +62,7 @@
           "contribution": "hosting us"
         }
       ],
-      "parkingInfo": "There's ample free street parking available near the venue.",
+      "parkingInfo": "Convenient street parking is available.",
       "stayConnected": [
         "Learn more about Design and Code at our website - www.memphisdesignandcode.com",
         "Entrepreneurs and builders, learn more about Epicenter's mission and resources - www.epicentermemphis.org",
