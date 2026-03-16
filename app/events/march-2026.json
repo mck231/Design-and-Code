@@ -1,0 +1,82 @@
+[
+  {
+    "id": "dc-20260318-web-workers",
+    "slug": "web-workers-march-2026",
+    "title": "Design & Code: Offload the Heavy Lifting with Web Workers",
+    "date": "2026-03-18",
+    "time": {
+      "start": "6:00 PM",
+      "end": "8:00 PM",
+      "full": "6:00 PM - 8:00 PM"
+    },
+    "location": {
+      "name": "Crews Center for Entrepreneurship, 2nd Floor - University of Memphis",
+      "address": "3618 Walker Avenue, Memphis, TN"
+    },
+    "summary": "Join us at the Crews Center for an interactive hands-on workshop and walkthrough. We're diving into the world of Web Workers in JavaScript to explore how they can keep your UIs smooth and your apps fast by offloading heavy tasks. Whether you're designing the experience or building it, this session provides actionable skills to make your web projects shine. We'll be using CodePen.io for the exercises, so there is nothing to install—you can jump in and start experimenting immediately.",
+    "description": {
+      "whoIsThisFor": "UI/UX designers, software engineers, or aspiring developers who want to level up their web game and understand performance-focused development.",
+      "agenda": [
+        {
+          "order": 1,
+          "type": "networking",
+          "activity": "Mix and Mingle",
+          "durationMinutes": 15,
+          "details": "Grab some food and meet new faces."
+        },
+        {
+          "order": 2,
+          "type": "workshop",
+          "speakerKey": "corianoHarris",
+          "activity": "Workshop & Walkthrough",
+          "durationMinutes": 60,
+          "details": "Live coding and interactive session with Coriano Harris.\n\nWhat we'll dive into:\n• Live Demo: Building a Web Worker from scratch to see how it operates outside the main thread.\n• Interactive Walkthrough: A step-by-step coding session you can follow along with in your browser.\n• Design & Dev Synergy: Practical tips for bridging the gap between design intent and high-performance execution.\n• Hands-on Exercises: Real-world scenarios to practice offloading intensive tasks.\n\nWhat to bring: A laptop is highly recommended so you can participate in the interactive CodePen exercises. No account is needed to get started!"
+        },
+        {
+          "order": 3,
+          "type": "wrapUp",
+          "activity": "Open Mic & Networking",
+          "durationMinutes": 30,
+          "details": "A space to share projects, ask follow-up questions, and connect with the community."
+        }
+      ],
+      "speakers": [
+        {
+          "key": "corianoHarris",
+          "name": "Coriano Harris",
+          "talkTitle": "Offload the Heavy Lifting with Web Workers"
+        }
+      ],
+      "rsvp": {
+        "platform": "Meetup",
+        "details": "Please confirm your attendance via this Meetup page so we can get an accurate headcount for food.",
+        "link": "https://www.meetup.com/memphis-technology-user-groups/events/313534854/"
+      },
+      "sponsors": [
+        {
+          "name": "Epicenter",
+          "contribution": "providing food"
+        },
+        {
+          "name": "Crews Center for Entrepreneurship",
+          "contribution": "hosting us"
+        }
+      ],
+      "parkingInfo": "Convenient street parking is available.",
+      "stayConnected": [
+        "Learn more about Design and Code at our website - www.memphisdesignandcode.com",
+        "Entrepreneurs and builders, learn more about Epicenter's mission and resources - www.epicentermemphis.org",
+        "U of M students, see what else the Crews Center has to offer - www.memphis.edu/crews/"
+      ]
+    },
+    "topics": [
+      "JavaScript",
+      "Web Workers",
+      "Web Performance",
+      "Front-end Development",
+      "Web Development",
+      "Workshop",
+      "Events in Memphis, TN"
+    ]
+  }
+]
