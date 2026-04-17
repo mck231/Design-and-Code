@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { supabase } from "../utils/supabase";
+import { supabase, isSupabaseConfigured } from "../utils/supabase";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function Auth() {
@@ -73,6 +73,15 @@ export default function Auth() {
           {isSignUp ? "Join the Community" : "Welcome Back"}
         </h1>
 
+        {!isSupabaseConfigured && (
+          <div className="mb-6 p-4 bg-amber-50 dark:bg-amber-900/30 border border-amber-200 dark:border-amber-800 rounded-lg">
+            <h2 className="text-sm font-bold text-amber-800 dark:text-amber-400 uppercase tracking-wider mb-1">Local Mode: Auth Disabled</h2>
+            <p className="text-xs text-amber-700 dark:text-amber-300">
+              Supabase environment variables are missing. Authentication and database features are unavailable.
+            </p>
+          </div>
+        )}
+
         {message && (
           <div className={`mb-4 p-3 rounded text-sm ${
             message.type === 'error' ? 'bg-red-100 text-red-700 border border-red-200' : 'bg-green-100 text-green-700 border border-green-200'
@@ -140,8 +149,12 @@ export default function Auth() {
 
           <button 
             type="submit" 
-            disabled={loading} 
-            className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition disabled:opacity-50 font-semibold"
+            disabled={loading || !isSupabaseConfigured} 
+            className={`w-full py-2 rounded transition disabled:opacity-50 font-semibold text-white ${
+              (loading || !isSupabaseConfigured) 
+              ? "bg-gray-400 cursor-not-allowed" 
+              : "bg-blue-600 hover:bg-blue-700"
+            }`}
           >
             {loading ? "Processing..." : (isSignUp ? "Sign Up" : "Log In")}
           </button>
