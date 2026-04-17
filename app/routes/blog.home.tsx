@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { supabase } from "../utils/supabase";
+import { supabase, isSupabaseConfigured } from "../utils/supabase";
 import type { Route } from "./+types/blog.home";
 
 interface Profile {
@@ -20,6 +20,10 @@ interface LoaderData {
 }
 
 export async function loader(): Promise<LoaderData> {
+  if (!isSupabaseConfigured) {
+    return { posts: [] };
+  }
+
   const { data, error } = await supabase
     .from('posts')
     .select(`
@@ -29,8 +33,11 @@ export async function loader(): Promise<LoaderData> {
     .eq('status', 'published') // Only show published posts
     .order('published_at', { ascending: false });
 
-  if (error) throw new Error("Failed to fetch posts");
-  return { posts: data as PostSummary[] };
+  if (error) {
+    console.error("Supabase error:", error);
+    return { posts: [] };
+  }
+  return { posts: (data as PostSummary[]) || [] };
 }
 
 export function meta({}: Route.MetaArgs) {
@@ -52,6 +59,15 @@ export default function BlogHome({ loaderData }: Route.ComponentProps) {
         <p className="mb-6 font-semibold text-gray-800 dark:text-gray-200 text-2xl">
           Welcome to our blog and resources section! Here you will find event recaps, speaker spotlights, and useful links.
         </p>
+        
+        {!isSupabaseConfigured && (
+          <div className="mb-8 p-6 bg-amber-50 dark:bg-amber-900/30 border border-amber-200 dark:border-amber-800 rounded-xl">
+            <h2 className="text-xl font-semibold text-amber-800 dark:text-amber-400 mb-2">Local Development Mode</h2>
+            <p className="text-amber-700 dark:text-amber-300">
+              Supabase is not configured. Please set <code className="bg-amber-100 dark:bg-amber-900 px-1 rounded">VITE_SUPABASE_URL</code> and <code className="bg-amber-100 dark:bg-amber-900 px-1 rounded">VITE_SUPABASE_PUBLISHABLE_KEY</code> in your <code className="bg-amber-100 dark:bg-amber-900 px-1 rounded">.env</code> file to see live blog posts.
+            </p>
+          </div>
+        )}
         
         <section className="mb-12 md:mb-16">
           <div className="grid gap-6 md:gap-8 lg:grid-cols-1">
