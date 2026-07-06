@@ -109,6 +109,28 @@ const speakers = [
     event: "April 2026",
     photo: "/speaker-pictures/MacM.jpg" 
   },
+  {
+    id: 15,
+    name: "Charise Hansen",
+    talkTitle: "Developing in an AI-powered studio: I look into Uncomplicated Inc.",
+    event: "May 2026",
+    photo: "/speaker-pictures/ChariseH.jpeg"
+  },
+  {
+    id: 16,
+    name: "Naim Hakeem",
+    talkTitle: "Design Process of Game Assets and Animations",
+    event: "June 2026",
+    photo: "/speaker-pictures/NaimH.jpg"
+  },
+  {
+    id: 17,
+    name: "Nadia Zirak",
+    talkTitle: "Introducing the Tiger Web Lab",
+    event: "July 2026",
+    photo: "/speaker-pictures/Ducks.jpg"
+  }
+
 ];
 
 export default function DuckHallOfFamePage() {

@@ -1,0 +1,81 @@
+[
+  {
+    "id": "dc-20260520-uncomplicated-inc-intro",
+    "slug": "uncomplicated-inc-intro-may-2026",
+    "title": "Memphis Design & Code: A Conversation with Charise Hansen: Introducing Uncomplicated, Inc.",
+    "date": "2026-05-20",
+    "time": {
+      "start": "6:00 PM",
+      "end": "8:00 PM",
+      "full": "6:00 PM - 8:00 PM"
+    },
+    "location": {
+      "name": "Crews Center for Entrepreneurship, 2nd Floor - University of Memphis",
+      "address": "3618 Walker Avenue, Memphis, TN"
+    },
+    "summary": "Join us at the Crews Center for an evening with Charise Hansen from Uncomplicated Inc. as she shares demos of applications and tools their team has built, along with insights into the development process, collaboration, and technologies used to bring those ideas to life.",
+    "description": {
+      "whoIsThisFor": "UI/UX designers, software engineers, or aspiring developers who want to level up their web game and understand performance-focused development.",
+      "agenda": [
+        {
+          "order": 1,
+          "type": "networking",
+          "activity": "Mix and Mingle",
+          "durationMinutes": 15,
+          "details": "Grab some food and meet new faces."
+        },
+        {
+          "order": 2,
+          "type": "workshop",
+          "speakerKey": "chariseHansen",
+          "activity": "Workshop & Walkthrough",
+          "durationMinutes": 60,
+          "details": "This session will be a more hands-on look into real projects, practical workflows, and the tools used by a growing software company. Whether you're interested in development, startups, product creation, or learning how teams turn ideas into working applications, this will be a great opportunity to learn from professionals actively building in the industry."
+        },
+        {
+          "order": 3,
+          "type": "wrapUp",
+          "activity": "Open Mic & Networking",
+          "durationMinutes": 30,
+          "details": "A space to share projects, ask follow-up questions, and connect with the community."
+        }
+      ],
+      "speakers": [
+        {
+          "key": "chariseHansen",
+          "name": "Charise Hansen",
+          "talkTitle": "Introducing Uncomplicated, Inc."
+        }
+      ],
+      "rsvp": {
+        "platform": "Meetup",
+        "details": "Please confirm your attendance via this Meetup page so we can get an accurate headcount for food.",
+        "link": "https://www.meetup.com/memphis-technology-user-groups/events/314089773/"
+      },
+      "sponsors": [
+        {
+          "name": "Epicenter",
+          "contribution": "providing food"
+        },
+        {
+          "name": "Crews Center for Entrepreneurship",
+          "contribution": "hosting us"
+        }
+      ],
+      "parkingInfo": "Convenient street parking is available.",
+      "stayConnected": [
+        "Learn more about Design and Code at our website - www.memphisdesignandcode.com",
+        "Entrepreneurs and builders, learn more about Epicenter's mission and resources - www.epicentermemphis.org",
+        "U of M students, see what else the Crews Center has to offer - www.memphis.edu/crews/"
+      ]
+    },
+    "topics": [
+      "Security",
+      "Web Performance",
+      "Front-end Development",
+      "Web Development",
+      "Workshop",
+      "Events in Memphis, TN"
+    ]
+  }
+]
