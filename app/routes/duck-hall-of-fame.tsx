@@ -128,7 +128,7 @@ const speakers = [
     name: "Nadia Zirak",
     talkTitle: "Introducing the Tiger Web Lab",
     event: "July 2026",
-    photo: "/speaker-pictures/Ducks.jpg"
+    photo: "/speaker-pictures/Nadia.jpeg"
   }
 
 ];
