@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router";
-import { supabase } from "../utils/supabase";
+import { supabase, isSupabaseConfigured } from "../utils/supabase";
 
 export default function AdminDashboard() {
   const [posts, setPosts] = useState<any[]>([]);
@@ -9,6 +9,8 @@ export default function AdminDashboard() {
   // Fetch Pending Posts
   useEffect(() => {
     const fetchPending = async () => {
+      if (!isSupabaseConfigured) return;
+
       // Security Check: Ideally done with RLS, but UI check helps too
       const { data: { user } } = await supabase.auth.getUser();
       if (!user) return navigate("/login");
@@ -39,6 +41,16 @@ export default function AdminDashboard() {
   return (
     <div className="container mx-auto px-4 py-12">
       <h1 className="text-3xl font-bold mb-8">Admin Dashboard</h1>
+
+      {!isSupabaseConfigured && (
+        <div className="mb-8 p-6 bg-amber-50 dark:bg-amber-900/30 border border-amber-200 dark:border-amber-800 rounded-xl">
+          <h2 className="text-xl font-semibold text-amber-800 dark:text-amber-400 mb-2">Supabase Connection Required</h2>
+          <p className="text-amber-700 dark:text-amber-300">
+            The Admin Dashboard requires a valid Supabase configuration. Please set your environment variables to manage posts.
+          </p>
+        </div>
+      )}
+
       <h2 className="text-xl font-semibold mb-4 text-gray-500">Pending Review ({posts.length})</h2>
 
       <div className="space-y-4">

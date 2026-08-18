@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { supabase } from "../utils/supabase";
+import { supabase, isSupabaseConfigured } from "../utils/supabase";
 import type { Route } from "./+types/blog.$slug";
 
 interface Profile {
@@ -25,6 +25,23 @@ interface LoaderData {
 
 // 1. THE LOADER: Fetches real data from Supabase
 export async function loader({ params }: Route.LoaderArgs): Promise<LoaderData> {
+  if (!isSupabaseConfigured) {
+    return {
+      post: {
+        id: "placeholder",
+        title: `Draft: ${params.slug}`,
+        slug: params.slug || "",
+        content: "<p>This is a placeholder post because Supabase is not configured. Add your environment variables to see live content.</p>",
+        excerpt: "Placeholder content for local development.",
+        published_at: new Date().toISOString(),
+        profiles: {
+          display_name: "Local Developer",
+          bio: "Currently working on Design & Code Memphis."
+        }
+      } as Post
+    };
+  }
+
   const { data, error } = await supabase
     .from('posts')
     .select(`

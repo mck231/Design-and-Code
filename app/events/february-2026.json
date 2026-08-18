@@ -1,0 +1,73 @@
+[
+  {
+    "id": "dc-20260218-speed-network-part2",
+    "slug": "speed-network-part2-february-2026",
+    "title": "Design & Code: Don't Speed Date, Speed Network Part 2",
+    "date": "2026-02-18",
+    "time": {
+      "start": "6:00 PM",
+      "end": "8:00 PM",
+      "full": "6:00 PM - 8:00 PM"
+    },
+    "location": {
+      "name": "Crews Center for Entrepreneurship, 2nd Floor - University of Memphis",
+      "address": "3618 Walker Avenue, Memphis, TN"
+    },
+    "summary": "Join us for a \"speed networking\" format where participants rotate every 5 minutes for short introductions and business card exchanges. A great opportunity for tech professionals in Memphis to connect, exchange ideas, and build relationships within the local industry.",
+    "description": {
+      "whoIsThisFor": "This event is for UI/UX designers, software engineers, and anyone interested in technology and professional networking within the Memphis tech community.",
+      "agenda": [
+        {
+          "order": 1,
+          "type": "networking",
+          "activity": "Mix, Mingle, and Munch",
+          "durationMinutes": 25,
+          "details": "Grab some food, say hello, and get to know others in the room."
+        },
+        {
+          "order": 2,
+          "type": "speedNetworking",
+          "activity": "Speed Networking Sessions",
+          "durationMinutes": 60,
+          "details": "Rapid introductions where participants rotate every 5 minutes for short introductions and business card exchanges. This fast-paced format helps you meet many people and make meaningful connections in a short time."
+        },
+        {
+          "order": 3,
+          "type": "wrapUp",
+          "activity": "Open Mic and Networking Breakout Sessions",
+          "durationMinutes": 30,
+          "details": "We'll wrap up with open mic opportunities, additional networking breakout sessions, and appreciation for everyone who made the night possible. Expect shoutouts for upcoming events and a group photo before we close out the evening."
+        }
+      ],
+      "speakers": [],
+      "rsvp": {
+        "platform": "Meetup",
+        "details": "Please confirm your attendance via the Meetup app so we can plan accordingly.",
+        "link": "https://www.meetup.com/memphis-technology-user-groups/events/312905453/"
+      },
+      "sponsors": [
+        {
+          "name": "Epicenter",
+          "contribution": "providing food"
+        },
+        {
+          "name": "Crews Center for Entrepreneurship",
+          "contribution": "hosting us"
+        }
+      ],
+      "parkingInfo": "There's ample free street parking available near the venue.",
+      "stayConnected": [
+        "Learn more about Design and Code at our website - www.memphisdesignandcode.com",
+        "Entrepreneurs and builders, learn more about Epicenter's mission and resources - www.epicentermemphis.org",
+        "U of M students, see what else the Crews Center has to offer - www.memphis.edu/crews/"
+      ]
+    },
+    "topics": [
+      "Networking",
+      "Professional Development",
+      "Technology Community",
+      "Career Development",
+      "Events in Memphis, TN"
+    ]
+  }
+]

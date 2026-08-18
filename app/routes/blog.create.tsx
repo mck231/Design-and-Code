@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import { supabase } from "../utils/supabase";
+import { supabase, isSupabaseConfigured } from "../utils/supabase";
 import Editor from "../components/Editor";
 
 // Helper function to generate slug from title and username
@@ -127,6 +127,15 @@ export default function CreatePost() {
     <div className="container mx-auto px-4 py-12 max-w-4xl">
       <h1 className="text-3xl font-bold mb-8">Write a New Post</h1>
 
+      {!isSupabaseConfigured && (
+        <div className="mb-8 p-6 bg-amber-50 dark:bg-amber-900/30 border border-amber-200 dark:border-amber-800 rounded-xl">
+          <h2 className="text-xl font-semibold text-amber-800 dark:text-amber-400 mb-2">Supabase Connection Required</h2>
+          <p className="text-amber-700 dark:text-amber-300">
+            Form submission is disabled because Supabase is not configured. Please set your environment variables to enable post creation.
+          </p>
+        </div>
+      )}
+
       {/* Scoped Custom CSS Preview */}
       {css && <style>{getScopedCSS(css)}</style>}
 
@@ -164,8 +173,12 @@ export default function CreatePost() {
 
         <button 
             type="submit" 
-            disabled={isSubmitting}
-            className="bg-blue-600 text-white px-8 py-3 rounded hover:bg-blue-700 font-bold"
+            disabled={isSubmitting || !isSupabaseConfigured}
+            className={`px-8 py-3 rounded font-bold text-white transition-colors ${
+              (isSubmitting || !isSupabaseConfigured) 
+                ? "bg-gray-400 cursor-not-allowed" 
+                : "bg-blue-600 hover:bg-blue-700"
+            }`}
         >
             {isSubmitting ? "Submitting..." : "Submit for Review"}
         </button>

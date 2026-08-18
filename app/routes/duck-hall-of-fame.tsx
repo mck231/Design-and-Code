@@ -80,7 +80,57 @@ const speakers = [
     talkTitle: "UX Product Design Challenges for UAV Flight Controls",
     event: "November 2025",
     photo: "/speaker-pictures/DanaR.jpg" 
+  }, 
+  { 
+    id: 11,
+    name: "Marco Cabrera", 
+    talkTitle: "Learn Enough WordPress to Get By",
+    event: "January 2026",
+    photo: "/speaker-pictures/Ducks.jpg" 
   },
+  { 
+    id: 12,
+    name: "Hamilton Williams", 
+    talkTitle: "Don't Speed Date, Speed Network pt. 2",
+    event: "February 2026",
+    photo: "/speaker-pictures/SpeedNetwork0226.jpg" 
+  },
+  { 
+    id: 13,
+    name: "Coriano Harris", 
+    talkTitle: "Offload the Heavy Lifting with Web Workers",
+    event: "March 2026",
+    photo: "/speaker-pictures/CorianoH.jpeg" 
+  },
+  { 
+    id: 14,
+    name: "Mac McMorries", 
+    talkTitle: "Secure By Design",
+    event: "April 2026",
+    photo: "/speaker-pictures/MacM.jpg" 
+  },
+  {
+    id: 15,
+    name: "Charise Hansen",
+    talkTitle: "Developing in an AI-powered studio: I look into Uncomplicated Inc.",
+    event: "May 2026",
+    photo: "/speaker-pictures/ChariseH.jpeg"
+  },
+  {
+    id: 16,
+    name: "Naim Hakeem",
+    talkTitle: "Design Process of Game Assets and Animations",
+    event: "June 2026",
+    photo: "/speaker-pictures/NaimH.jpg"
+  },
+  {
+    id: 17,
+    name: "Nadia Zirak",
+    talkTitle: "Introducing the Tiger Web Lab",
+    event: "July 2026",
+    photo: "/speaker-pictures/Ducks.jpg"
+  }
+
 ];
 
 export default function DuckHallOfFamePage() {
@@ -104,7 +154,7 @@ export default function DuckHallOfFamePage() {
           {speakers.map((speaker) => (
             <SpeakerCard key={speaker.id} speaker={speaker} />
           ))}
-          <p className="text-center text-xl font-bold dark:text-gray-400 mt-6 self-center">See you in 2026!</p>
+          {/* <p className="text-center text-xl font-bold dark:text-gray-400 mt-6 self-center">See you in 2026!</p> */}
         </div>
 
         {/* Call to Action */}

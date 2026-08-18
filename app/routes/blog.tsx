@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Outlet, Link, useLocation } from "react-router";
-import { supabase } from "../utils/supabase";
+import { supabase, isSupabaseConfigured } from "../utils/supabase";
 
 export default function BlogLayout() {
   const [user, setUser] = useState<any>(null);
@@ -8,6 +8,8 @@ export default function BlogLayout() {
 
   // 1. Check Auth State
   useEffect(() => {
+    if (!isSupabaseConfigured) return;
+
     // Get initial session
     supabase.auth.getUser().then(({ data }) => setUser(data.user));
 
@@ -77,9 +79,13 @@ export default function BlogLayout() {
               /* LOGGED OUT LINKS */
               <Link 
                 to="/login" 
-                className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded transition-colors"
+                className={`px-3 py-1.5 rounded transition-colors ${
+                  !isSupabaseConfigured 
+                  ? "bg-gray-400 cursor-not-allowed pointer-events-none" 
+                  : "bg-blue-600 hover:bg-blue-700 text-white"
+                }`}
               >
-                Log In
+                {!isSupabaseConfigured ? "Local Mode" : "Log In"}
               </Link>
             )}
           </nav>

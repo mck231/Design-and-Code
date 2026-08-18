@@ -4,8 +4,10 @@ import { createClient } from "@supabase/supabase-js";
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
 
-if (!supabaseUrl || !supabaseKey) {
-  throw new Error("Missing Supabase Environment Variables");
-}
+export const isSupabaseConfigured = Boolean(supabaseUrl && supabaseKey);
 
-export const supabase = createClient(supabaseUrl, supabaseKey);
+// Use placeholders to avoid crashing during initialization if variables are missing
+export const supabase = createClient(
+  supabaseUrl || "https://placeholder-url.supabase.co", 
+  supabaseKey || "placeholder-key"
+);

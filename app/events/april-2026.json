@@ -1,0 +1,81 @@
+[
+  {
+    "id": "dc-20260415-secure-by-design",
+    "slug": "secure-by-design-april-2026",
+    "title": "Design & Code: Secure By Design",
+    "date": "2026-04-15",
+    "time": {
+      "start": "6:00 PM",
+      "end": "8:00 PM",
+      "full": "6:00 PM - 8:00 PM"
+    },
+    "location": {
+      "name": "Crews Center for Entrepreneurship, 2nd Floor - University of Memphis",
+      "address": "3618 Walker Avenue, Memphis, TN"
+    },
+    "summary": "Come hang out at the Crews Center for a conversation on cybersecurity with Mac, a DevSecOps specialist and software developer. He'll be breaking down how to implement 'Secure by Design' principles into your workflow. Whether you're a founder or a dev, you'll walk away with a better understanding of how to keep your sites from becoming easy targets for hackers. This is a vital conversation for any devs, designers, or founders looking to ship legitimate products out into the world.",
+    "description": {
+      "whoIsThisFor": "UI/UX designers, software engineers, or aspiring developers who want to level up their web game and understand performance-focused development.",
+      "agenda": [
+        {
+          "order": 1,
+          "type": "networking",
+          "activity": "Mix and Mingle",
+          "durationMinutes": 15,
+          "details": "Grab some food and meet new faces."
+        },
+        {
+          "order": 2,
+          "type": "workshop",
+          "speakerKey": "macMcMorries",
+          "activity": "Workshop & Walkthrough",
+          "durationMinutes": 60,
+          "details": "Breaking down how to implement 'Secure by Design' principles into your workflow. Whether you're a founder or a dev, you'll walk away with a better understanding of how to keep your sites from becoming easy targets for hackers."
+        },
+        {
+          "order": 3,
+          "type": "wrapUp",
+          "activity": "Open Mic & Networking",
+          "durationMinutes": 30,
+          "details": "A space to share projects, ask follow-up questions, and connect with the community."
+        }
+      ],
+      "speakers": [
+        {
+          "key": "macMcMorries",
+          "name": "Mac McMorries",
+          "talkTitle": "Secure By Design"
+        }
+      ],
+      "rsvp": {
+        "platform": "Meetup",
+        "details": "Please confirm your attendance via this Meetup page so we can get an accurate headcount for food.",
+        "link": "https://www.meetup.com/memphis-technology-user-groups/events/314089773/"
+      },
+      "sponsors": [
+        {
+          "name": "Epicenter",
+          "contribution": "providing food"
+        },
+        {
+          "name": "Crews Center for Entrepreneurship",
+          "contribution": "hosting us"
+        }
+      ],
+      "parkingInfo": "Convenient street parking is available.",
+      "stayConnected": [
+        "Learn more about Design and Code at our website - www.memphisdesignandcode.com",
+        "Entrepreneurs and builders, learn more about Epicenter's mission and resources - www.epicentermemphis.org",
+        "U of M students, see what else the Crews Center has to offer - www.memphis.edu/crews/"
+      ]
+    },
+    "topics": [
+      "Security",
+      "Web Performance",
+      "Front-end Development",
+      "Web Development",
+      "Workshop",
+      "Events in Memphis, TN"
+    ]
+  }
+]
