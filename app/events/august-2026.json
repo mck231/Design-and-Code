@@ -1,0 +1,81 @@
+[
+  {
+    "id": "dc-20260819-lightning-talks-2026",
+    "slug": "lightning-talks-2026-august-2026",
+    "title": "Design & Code: Lightning Talks 2026 ⚡",
+    "date": "2026-08-19",
+    "time": {
+      "start": "6:00 PM",
+      "end": "8:00 PM",
+      "full": "6:00 PM - 8:00 PM"
+    },
+    "location": {
+      "name": "Crews Center for Entrepreneurship, University of Memphis",
+      "address": "3618 Walker Avenue · Memphis, TN"
+    },
+    "summary": "Lighting talks are back! Join our Memphis community for a night of short, high-energy talks, networking, food, and conversation about projects, ideas, and lessons learned.",
+    "description": {
+      "whoIsThisFor": "This event is for designers, developers, builders, and curious new faces in the Memphis tech community. Whether you're a seasoned creator or just getting started, you'll find a welcoming room full of people sharing what they're working on and learning.",
+      "agenda": [
+        {
+          "order": 1,
+          "type": "networking",
+          "activity": "Mix, Mingle, and Munch",
+          "durationMinutes": 15,
+          "details": "Meet new faces, grab some food, and connect with the local tech and startup community."
+        },
+        {
+          "order": 2,
+          "type": "talk",
+          "speakerKey": "communitySpeakers",
+          "activity": "Lightning Talks",
+          "durationMinutes": 60,
+          "details": "Several Memphis community members will give short, ~7 minute talks about their projects, interests, and lessons learned. This is an elevator pitch-style format designed to spark ideas, conversation, and inspiration."
+        },
+        {
+          "order": 3,
+          "type": "networking",
+          "activity": "Open Mic & Networking",
+          "durationMinutes": 30,
+          "details": "Ask questions, share ideas, meet other developers and creators, and continue the conversation with the people in the room."
+        }
+      ],
+      "speakers": [
+        {
+          "key": "communitySpeakers",
+          "name": "Memphis Community Speakers",
+          "talkTitle": "Lightning Talks"
+        }
+      ],
+      "rsvp": {
+        "platform": "Meetup",
+        "details": "Please confirm your attendance through Meetup so we can plan accordingly for food and seating.",
+        "link": "https://www.meetup.com/memphis-technology-user-groups/events/315999244/"
+      },
+      "sponsors": [
+        {
+          "name": "Epicenter",
+          "contribution": "providing food"
+        },
+        {
+          "name": "Crews Center for Entrepreneurship",
+          "contribution": "hosting us"
+        }
+      ],
+      "parkingInfo": "Convenient street parking is available.",
+      "stayConnected": [
+        "Learn more about Design and Code at our website - www.memphisdesignandcode.com",
+        "Explore resources for Memphis builders at Epicenter - www.epicentermemphis.org",
+        "U of M students, see what else the Crews Center has to offer - www.memphis.edu/crews/"
+      ]
+    },
+    "topics": [
+      "Events in Memphis, TN",
+      "Software Development",
+      "Web Development",
+      "UX Design",
+      "Networking",
+      "Community"
+    ]
+  }
+]
